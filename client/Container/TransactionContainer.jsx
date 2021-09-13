@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Transaction from '../Components/Transaction';
 
 const TransactionContainer = (props) => {
-  const transactions = () => {
-    const result = [];
+  const [transactions, setTransactions] = useState([]);
+
+  const transactionRenderer = () => {
+    const transactionList = [];
     for (let i = 0; i < 10; i++) {
-      result.push(<Transaction />);
+      // TODO: Update with map statement to pass props down to transaction components
+      transactionList.push(<Transaction className='transaction' key={i} />);
     }
-    return result;
+    return transactionList;
   };
 
   return (
@@ -18,8 +21,9 @@ const TransactionContainer = (props) => {
         margin: '0 auto',
       }}>
       <h1>TransactionContainer</h1>
-      <div>{transactions()}</div>
+      <div>{transactionRenderer()}</div>
     </div>
   );
 };
+
 export default TransactionContainer;
