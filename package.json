@@ -21,6 +21,7 @@
   "homepage": "https://github.com/LeafBuddy/leafBuddy#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
     "nodemon": "^2.0.12",
