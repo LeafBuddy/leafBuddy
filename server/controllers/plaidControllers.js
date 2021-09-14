@@ -1,7 +1,6 @@
 const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
 require('dotenv/config.js');
 const moment = require('moment');  
-
 const configuration = new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV],
   baseOptions: {
@@ -56,7 +55,7 @@ plaidControllers.publicToken = async (req, res, next) => {
     const public_token = req.body.public_token;
     const response = await plaidClient.itemPublicTokenExchange({ public_token });
     res.locals. = response.data.;
-    console.log('this is the access token ', res.locals.)
+    console.log('this is the access token ', res.locals.);
     return next();
   } catch (error) {
     console.log(error);
