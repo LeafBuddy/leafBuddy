@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import {
+const React, { PureComponent } = require('react');
+const {
   BarChart,
   Bar,
   Cell,
@@ -9,7 +9,7 @@ import {
   LabelList,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
+} = require('recharts');
 
 const data = [
   {

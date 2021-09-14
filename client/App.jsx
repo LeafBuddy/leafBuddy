@@ -1,15 +1,20 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import React from 'react';
-import Login from './pages/Login';
-import Main from './pages/Main';
+const React = require('react');
+const {useState, useEffect } = require('react');
+const { BrowserRouter, Switch, Route, Link } = require('react-router-dom');
+const Login = require('./pages/Login');
+const Main = require('./pages/Main'); 
+const PlaidContainer = require('./Container/PlaidContainer.jsx');
 
-export default function App() {
+
+module.exports = function App() {
+
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route exact path='/' component={Login} />
-        <Route exact path='/main' component={Main} />
+        <Route path='/main' component={Main} />
+        <Route path='/bank' component={PlaidContainer} />
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
-}
+};

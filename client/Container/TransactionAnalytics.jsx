@@ -1,6 +1,6 @@
-import React from 'react';
-import YourCarbonFootprint from '../Components/YourCarbonFootprint';
-import BarChart from '../Components/BarChart';
+const React = require('react');
+const YourCarbonFootprint = require('../Components/YourCarbonFootprint');
+const BarChart = require('../Components/BarChart');
 
 const TransactionAnalytics = (props) => {
   return (
@@ -17,4 +17,4 @@ const TransactionAnalytics = (props) => {
     </div>
   );
 };
-export default TransactionAnalytics;
+module.exports =  TransactionAnalytics;
