@@ -7,7 +7,7 @@ dotenv.config({path: path.resolve(__dirname, './config/config.env' )});
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const plaidRouter =require('./routes/plaidRouter.js');
+const plaidRouter = require('./routes/plaidRouter.js');
 
 //middleware
 app.use(cors());
