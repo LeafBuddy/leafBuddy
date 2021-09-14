@@ -1,4 +1,5 @@
-const React, { PureComponent } = require('react');
+const React = require('react');
+const { PureComponent } = require('react');
 const {
   BarChart,
   Bar,
@@ -62,29 +63,27 @@ const data = [
   },
 ];
 
-export default class Co2Chart extends PureComponent {
-  render() {
-    return (
-      <ResponsiveContainer width='100%' height='100%'>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}>
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' />
-          <YAxis />
-          <Legend />
-          <Bar dataKey='kg' fill='#8884d8'>
-            <LabelList dataKey='kg' position='top' />
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
-    );
-  }
+export default function Co2Chart() {
+  return (
+    <ResponsiveContainer width='100%' height='100%'>
+      <BarChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}>
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='name' />
+        <YAxis />
+        <Legend />
+        <Bar dataKey='kg' fill='#8884d8'>
+          <LabelList dataKey='kg' position='top' />
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
+  );
 }

@@ -1,7 +1,7 @@
 const React = require('react');
 
 const Transaction = (props) => {
-  const { merchant, date, icon, amount, carbonAmount } = props;
+  const { merchant, date, icon, amount, carbonAmount } = props.props;
   return (
     <div className='transactionComponent'>
       <div className='txnIcon'>{icon}</div>

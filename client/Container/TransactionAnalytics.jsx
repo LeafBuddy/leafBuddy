@@ -1,8 +1,8 @@
 const React = require('react');
-const YourCarbonFootprint = require('../Components/YourCarbonFootprint');
-const BarChart = require('../Components/BarChart');
+import YourCarbonFootprint from '../Components/YourCarbonFootprint';
+import BarChart from '../Components/BarChart';
 
-const TransactionAnalytics = (props) => {
+export default function TransactionAnalytics(props) {
   return (
     <div className='transactionAnalytics'>
       <div className='transactionAnalyticsHeader'>
@@ -16,5 +16,4 @@ const TransactionAnalytics = (props) => {
       </div>
     </div>
   );
-};
-module.exports =  TransactionAnalytics;
+}

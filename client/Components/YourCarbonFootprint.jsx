@@ -1,6 +1,6 @@
-import React from 'react';
+const React = require('react');
 
-const YourCarbonFootprint = () => {
+export default function YourCarbonFootprint() {
   return (
     <div className='rightChart'>
       <div className='footprintNumber'>{529}</div>
@@ -8,5 +8,4 @@ const YourCarbonFootprint = () => {
       <div className='footprintLabel'>Your Carbon Footprint</div>
     </div>
   );
-};
-export default YourCarbonFootprint;
+}
