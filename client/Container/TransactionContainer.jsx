@@ -19,7 +19,7 @@ export default function TransactionContainer(props) {
         date: txnDate,
         merchant: faker.company.companyName(),
         amount: `$ ${faker.finance.amount()}`,
-        carbonAmount: faker.finance.amount(),
+        carbonAmount: `${faker.finance.amount()}kg`,
       };
       // TODO: Update with map statement to pass props down to transaction components
       transactionList.push(
