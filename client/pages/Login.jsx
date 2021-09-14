@@ -2,14 +2,7 @@ const regeneratorRuntime = require('regenerator-runtime');
 const axios = require('axios');
 const React = require('react');
 const { useState, useEffect } = require('react');
-const { ReactDOM } = require('react');
-const {
-  Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} = require('react-router-dom');
+const { Redirect } = require('react-router-dom');
 
 function Login() {
   const [username, setUsername] = useState('');
