@@ -1,9 +1,10 @@
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+const path = require('path');
+const HtmlWebpackPlugin = require ('html-webpack-plugin');
 
-export default {
+module.exports = {
   entry: {
     index: './client/index.js',
+    styles: './client/style/style.scss',
   },
   devtool: 'eval-source-map',
   output: {
@@ -35,17 +36,6 @@ export default {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
-      },
-      {
         test: /\.(png|jpg|gif)$/i,
         use: [
           {
@@ -67,9 +57,10 @@ export default {
     static: './client',
     historyApiFallback: true,
     proxy: {
-      '/': 'http://localhost:4000/'
-      },
-    },
+      '/api/**': {target: 'http://localhost:3000', secure: false},
+      '/auth/**': {target: 'http://localhost:3000', secure: false},
+    }
+  },
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
