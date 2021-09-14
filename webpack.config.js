@@ -26,6 +26,12 @@ export default {
         },
       },
       {
+        test: /\.m?js/,
+        resolve: {
+            fullySpecified: false
+        }
+      },
+      {
         test: /\.s[ac]ss$/i,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],

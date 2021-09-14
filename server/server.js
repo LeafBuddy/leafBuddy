@@ -1,9 +1,12 @@
 import express from 'express';
 /* const cookieParser = require('cookie-parser');
 const cors = require('cors'); */
-import path from 'path';
+import path, { dirname } from 'path';
 const app = express();
-/* const messageRouter = require('./routers/messageRouter.js'); */
+import router from './routes/plaidRouter.js';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 //middleware
 /* app.use(cors());
@@ -12,24 +15,24 @@ const app = express();
  */app.use(express.urlencoded({ extended: true }));
 
 //serve css files
-app.get('/css/style.css', (_req, res) => {
-  res.set('Content-Type', 'text/css');
-  res.sendFile(path.resolve(__dirname, '..', 'assets', 'css', 'style.css'));
-});
-//serve js files
-app.get('/js/:file', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'assets', 'js', 'index.js'));
-});
+// app.get('/css/style.css', (_req, res) => {
+//   res.set('Content-Type', 'text/css');
+//   res.sendFile(path.resolve(__dirname, '..', 'assets', 'css', 'style.css'));
+// });
+// //serve js files
+// app.get('/js/:file', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '..', 'assets', 'js', 'index.js'));
+// });
+
+//plaid router
+app.use('/plaid', router);
+
 
 //default route handler
-app.get('/', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, '../views/index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
+// });
 
-//message router
-/* app.use('/messages', messageRouter);
- *///auth router
-//app.use('/authenticate', authRouter);
 
 //global error handler
 app.use((err, req, res, next) => {
