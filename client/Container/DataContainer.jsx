@@ -1,5 +1,5 @@
 import React from 'react';
-import TransactionAnalytics from '../Components/TransactionAnalytics';
+import TransactionAnalytics from '../Container/TransactionAnalytics';
 import TransactionContainer from '../Container/TransactionContainer';
 
 const DataContainer = (props) => {
