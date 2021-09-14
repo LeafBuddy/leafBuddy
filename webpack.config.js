@@ -24,13 +24,26 @@ export default {
         },
       },
       {
+        test: /\.m?js/,
+        resolve: {
+            fullySpecified: false
+        }
+      },
+      {
         test: /\.s[ac]ss$/i,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -54,13 +67,9 @@ export default {
     static: './client',
     historyApiFallback: true,
     proxy: {
-      '/api/**': {
-        target: 'http://localhost:4000/',
-        // secure: false,
-        logLevel: 'debug',
+      '/': 'http://localhost:4000/'
       },
     },
-  },
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
