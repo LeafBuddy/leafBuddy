@@ -1,8 +1,90 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  LabelList,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
 
-const data = [{ value: 527.65 }, { value: 602.35 }];
+const data = [
+  {
+    name: 'Jan',
+    kg: 400,
+  },
+  {
+    name: 'Feb',
+    kg: 210,
+  },
+  {
+    name: 'Mar',
+    kg: 290,
+  },
+  {
+    name: 'Apr',
+    kg: 100,
+  },
+  {
+    name: 'May',
+    kg: 181,
+  },
+  {
+    name: 'Jun',
+    kg: 500,
+  },
+  {
+    name: 'Jul',
+    kg: 50,
+  },
+  {
+    name: 'Aug',
+    kg: 250,
+  },
+  {
+    name: 'Sep',
+    kg: 50,
+  },
+  {
+    name: 'Oct',
+    kg: 50,
+  },
+  {
+    name: 'Nov',
+    kg: 50,
+  },
+  {
+    name: 'Dec',
+    kg: 50,
+  },
+];
 
-const BarChart = () => {
-  return <div>Chart 2</div>;
-};
-export default BarChart;
+export default class Co2Chart extends PureComponent {
+  render() {
+    return (
+      <ResponsiveContainer width='100%' height='100%'>
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}>
+          <CartesianGrid strokeDasharray='3 3' />
+          <XAxis dataKey='name' />
+          <YAxis />
+          <Legend />
+          <Bar dataKey='kg' fill='#8884d8'>
+            <LabelList dataKey='kg' position='top' />
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  }
+}
