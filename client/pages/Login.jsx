@@ -51,7 +51,6 @@ function Login() {
       .catch((err) => console.log(err));
   }
 
-  async function onGoogleClick() {}
 
   if (!isLoggedIn) {
     return (
@@ -88,12 +87,14 @@ function Login() {
               Create new account
             </button>
             <div> </div>
-            <button
-              className='btn-grad'
-              id='loginButton'
-              onClick={onGoogleClick}>
-              Login with Google
-            </button>
+            <form>
+              <button 
+                formaction='/auth/google'
+                className='btn-grad'
+                id='loginButton'>
+                Login with Google
+              </button>
+            </form>
           </div>
         </div>
       </div>

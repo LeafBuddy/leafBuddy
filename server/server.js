@@ -36,8 +36,8 @@ passport.use(
 
       //add user to db with their access token for future api calls
       try {
-        await eventController.addUser(profile, accessToken, refreshToken);
-        await eventController.pushCalEvents(accessToken, profile);
+        //await eventController.addUser(profile, accessToken, refreshToken);
+        //await eventController.pushCalEvents(accessToken, profile);
       } catch (err) {
         console.log(err);
       }
