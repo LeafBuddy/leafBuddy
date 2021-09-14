@@ -55,7 +55,7 @@ plaidControllers.publicToken = async (req, res, next) => {
     const public_token = req.body.public_token;
     const response = await plaidClient.itemPublicTokenExchange({ public_token });
     res.locals.access_token = response.data.access_token;
-    console.log('this is the access token ', res.locals.access_token)
+    console.log('this is the access token ', res.locals.access_token);
     return next();
   } catch (error) {
     console.log(error);
