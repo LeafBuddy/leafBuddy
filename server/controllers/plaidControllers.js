@@ -1,20 +1,17 @@
 import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid';
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
-console.log('hey');
-console.log(PlaidEnvironments);
+const configuration = new Configuration({
+  basePath: PlaidEnvironments[process.env.PLAID_ENV],
+  baseOptions: {
+    headers: {
+      'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID,
+      'PLAID-SECRET': process.env.PLAID_SECRET,
+    },
+  },
+});
 
-// const configuration = new Configuration({
-//   basePath: PlaidEnvironments.sandbox,
-//   baseOptions: {
-//     headers: {
-//       'PLAID-CLIENT-ID': 
-//       'PLAID-SECRET': 
-//     },
-//   },
-// });
-
-// const client = new PlaidApi(configuration);
+const plaidClient = new PlaidApi(configuration);
 
 const plaidControllers = {};
 
@@ -28,28 +25,28 @@ const plaidControllers = {};
 // DO WE WANT TO SAVE DATA? 
 
 
-// plaidControllers.createLinkToken = async (req, res, next) => {
-//   try {
-//     const response = await plaidClient.linkTokenCreate({
-//       user: {
-//         client_user_id: 'user_good',
-//       },
-//       client_name: 'LeafBuddy',
-//       products: ['auth', 'transactions'],
-//       language: 'en',
-//       account_filters: {
-//         depository: {
-//           account_subtypes: ['checking', 'savings'],
-//         },
-//       },
-//     });
-//     res.locals.linkToken = response.data.link_token;
-//     return next();
-//   } catch (error) {
-//     console.log('Error with token:', response.data.link_token);
-//     return next(err);
-//   }
-// }; 
+plaidControllers.createLinkToken = async (req, res, next) => {
+  try {
+    const response = await plaidClient.linkTokenCreate({
+      user: {
+        client_user_id: 'user_good',
+      },
+      client_name: 'LeafBuddy',
+      products: ['auth', 'transactions'],
+      language: 'en',
+      account_filters: {
+        depository: {
+          account_subtypes: ['checking', 'savings'],
+        },
+      },
+    });
+    res.locals.linkToken = response.data.link_token;
+    return next();
+  } catch (error) {
+    console.log('Error with token:', response.data.link_token);
+    return next(err);
+  }
+}; 
 
 
 
