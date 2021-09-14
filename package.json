@@ -31,6 +31,7 @@
     "framer-motion": "^4.1.17",
     "html-webpack-plugin": "^5.3.2",
     "module": "^1.2.5",
+    "moment": "^2.29.1",
     "nodemon": "^2.0.12",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
