@@ -11,6 +11,7 @@ const app = express();
 /* app.use(cookieParser());
  */ app.use(express.urlencoded({ extended: true }));
 
+
 //serve css files
 app.get('/css/style.css', (_req, res) => {
   res.set('Content-Type', 'text/css');
