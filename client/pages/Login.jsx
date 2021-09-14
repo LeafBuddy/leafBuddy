@@ -51,6 +51,10 @@ function Login() {
       .catch((err) => console.log(err));
   }
 
+  async function onGoogleClick() {
+
+  }
+
   if (!isLoggedIn) {
     return (
       <div>
@@ -77,6 +81,10 @@ function Login() {
           <div> </div>
           <button className='buttons' id='signup' onClick={onRegisterClick}>
             Create new account
+          </button>
+          <div> </div>
+          <button className='buttons' id='signup' onClick={onGoogleClick}>
+            Login with Google
           </button>
         </div>
       </div>

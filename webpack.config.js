@@ -1,10 +1,7 @@
-import path from 'path';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-const __dirname = dirname(fileURLToPath(import.meta.url)); // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-when-using-the-experimental-modules-flag
+const path = require('path');
+const HtmlWebpackPlugin = require ('html-webpack-plugin');
 
-export default {
+module.exports = {
   entry: {
     index: './client/index.js',
     styles: './client/style/style.scss',
@@ -53,12 +50,9 @@ export default {
     static: './client',
     historyApiFallback: true,
     proxy: {
-      '/api/**': {
-        target: 'http://localhost:4000/',
-        // secure: false,
-        logLevel: 'debug',
-      },
-    },
+      '/api/**': {target: 'http://localhost:3000', secure: false},
+      '/auth/**': {target: 'http://localhost:3000', secure: false},
+    }
   },
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
