@@ -2,16 +2,16 @@ const React = require('react');
 const { useState, useEffect } = require('react');
 const PlaidClient = require('../Components/PlaidClient.jsx');
 
-const PlaidContainer = () => {
+export default function PlaidContainer() {
   const [linkToken, setLinkToken] = useState(null);
 
-  useEffect( () => {
+  useEffect(() => {
     fetch('/plaid/linkToken', {
       method: 'GET',
       'Content-Type': 'application/json',
     })
-      .then(response => response.json())
-      .then(data => setLinkToken(data));
+      .then((response) => response.json())
+      .then((data) => setLinkToken(data));
   }, []);
 
   if (!linkToken) {
@@ -20,13 +20,7 @@ const PlaidContainer = () => {
 
   return (
     <div>
-      <PlaidClient linkToken={linkToken} /> 
+      <PlaidClient linkToken={linkToken} />
     </div>
   );
-};
-
-module.exports = PlaidContainer;
-
-
-
-
+}
