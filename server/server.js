@@ -1,9 +1,11 @@
 import express from 'express';
-/* const cookieParser = require('cookie-parser');
-const cors = require('cors'); */
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+
 const app = express();
-/* const messageRouter = require('./routers/messageRouter.js'); */
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const plaidRouter = require ('./routes/plaidRouter.js');
 
 //middleware
 /* app.use(cors());
@@ -26,9 +28,9 @@ app.get('/', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, '../views/index.html'));
 });
 
-//message router
-/* app.use('/messages', messageRouter);
- *///auth router
+//plaid router
+app.use('/api', plaidRouter);
+//auth router
 //app.use('/authenticate', authRouter);
 
 //global error handler
