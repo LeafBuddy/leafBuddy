@@ -27,7 +27,7 @@ const plaidControllers = {};
 
 plaidControllers.createLinkToken = async (req, res, next) => {
   try {
-    const response = await plaidClient.linkTokenCreate({
+    const response = await plaidClient.createLinkToken({
       user: {
         client_user_id: 'user_good',
       },
@@ -49,6 +49,13 @@ plaidControllers.createLinkToken = async (req, res, next) => {
   }
 }; 
 
+plaidControllers.publicToken = async (req, res, next) => {
+
+
+
+
+
+}
 
 
 export default plaidControllers; 

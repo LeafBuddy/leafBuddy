@@ -6,8 +6,15 @@ import plaidControllers from '../controllers/plaidControllers.js';
 //   res.status(200).send('check');
 // });
 
-router.get('/', plaidControllers.createLinkToken, (req, res) => {
-  res.status(200).json(res.locals.linkToken);
+router.get('/linkToken', plaidControllers.createLinkToken, (req, res) => {
+  // console.log('router firing');
+  res.status(200).send(res.locals.linkToken);
 });
+
+router.post('/publicToken', plaidControllers.publicToken, (req, res) => {
+  console.log('hitting public router')
+  res.status(200).json();
+});
+
 
 export default router;

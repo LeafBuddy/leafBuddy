@@ -69,13 +69,9 @@ export default {
     static: './client',
     historyApiFallback: true,
     proxy: {
-      '/api/**': {
-        target: 'http://localhost:4000',
-        // secure: false,
-        logLevel: 'debug',
+      '/': 'http://localhost:4000/'
       },
     },
-  },
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
