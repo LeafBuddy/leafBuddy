@@ -11,11 +11,10 @@ const app = express();
 /* app.use(cookieParser());
  */ app.use(express.urlencoded({ extended: true }));
 
-
 //serve css files
-app.get('/css/style.css', (_req, res) => {
+app.get('/style/style.scss', (_req, res) => {
   res.set('Content-Type', 'text/css');
-  res.sendFile(path.resolve(__dirname, '..', 'assets', 'css', 'style.css'));
+  res.sendFile(path.resolve(__dirname, '..', 'assets', 'css', 'style.scss'));
 });
 //serve js files
 app.get('/js/:file', (req, res) => {
