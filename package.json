@@ -21,7 +21,6 @@
   "homepage": "https://github.com/LeafBuddy/leafBuddy#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "eslint": "^7.32.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
     "nodemon": "^2.0.12",
@@ -33,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
+    "eslint": "^7.32.0",
     "@babel/preset-react": "^7.14.5",
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
