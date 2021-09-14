@@ -1,4 +1,4 @@
-require('dotenv/config.js');
+/* require('dotenv/config.js');
 const plaidController = {};
 const { Configuration, PlaidApi, plaidEnvironments } = require ('plaid');
 
@@ -38,4 +38,4 @@ plaidController.createLinkToken = async (req, res, next) => {
   return next();
 };
 
-export default plaidController;
+module.exports = plaidController; */

@@ -1,7 +1,7 @@
-import React from 'react';
-import GaugeChart from './GaugeChart';
-import BarChart from './BarChart';
-import LineChart from './LineChart';
+const React = require('react');
+const GaugeChart = require('./GaugeChart');
+const BarChart = require('./BarChart');
+const LineChart = require('./LineChart');
 
 const TransactionAnalytics = (props) => {
   return (

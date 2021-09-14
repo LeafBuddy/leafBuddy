@@ -1,5 +1,5 @@
-import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid';
-import 'dotenv/config.js';
+const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
+require('dotenv/config.js');
 
 const configuration = new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV],
@@ -58,5 +58,5 @@ plaidControllers.publicToken = async (req, res, next) => {
 }
 
 
-export default plaidControllers; 
+module.exports = plaidControllers; 
 

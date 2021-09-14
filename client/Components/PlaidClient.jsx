@@ -1,4 +1,5 @@
-const React, { useCallback, useState, useEffect } = require('react');
+const React = require('react');
+const { useCallback, useState, useEffect } = require('react');
 const {
   usePlaidLink,
   PlaidLinkOptions,

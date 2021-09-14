@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require ('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -57,7 +57,7 @@ module.exports = {
     static: './client',
     historyApiFallback: true,
     proxy: {
-      '/api/**': {target: 'http://localhost:3000', secure: false},
+      '/plaid/**': {target: 'http://localhost:3000', secure: false},
       '/auth/**': {target: 'http://localhost:3000', secure: false},
     }
   },

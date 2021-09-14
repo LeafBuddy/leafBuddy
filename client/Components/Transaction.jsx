@@ -1,4 +1,4 @@
-import React from 'react';
+const React = require('react');
 
 const Transaction = (props) => {
   const { merchant, icon, amount, carbonAmount } = props.props;

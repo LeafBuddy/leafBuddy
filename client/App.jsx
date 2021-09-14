@@ -1,4 +1,5 @@
-const React, {useState, useEffect } = require('react');
+const React = require('react');
+const {useState, useEffect } = require('react');
 const { Router, Switch, Route, Link } = require('react-router-dom');
 const Login = require('./pages/Login');
 const Main = require('./pages/Main'); 
