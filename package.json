@@ -12,17 +12,19 @@
     "type": "git",
     "url": "git+https://github.com/LeafBuddy/leafBuddy.git"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LeafBuddy/leafBuddy/issues"
   },
-  "proxy": "http://localhost:4000",
   "homepage": "https://github.com/LeafBuddy/leafBuddy#readme",
   "dependencies": {
+    "create-require": "^1.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.2",
+    "module": "^1.2.5",
     "nodemon": "^2.0.12",
     "path": "^0.12.7",
     "pg": "^8.7.1",
@@ -31,10 +33,11 @@
     "webpack": "^5.52.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-modules-commonjs": "7.15.4",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
-    "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "webpack-cli": "^4.8.0",

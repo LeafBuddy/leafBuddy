@@ -1,11 +1,12 @@
 import express from 'express';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import plaidRouter from './routes/plaidRouter.js';
 
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const app = express();
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const plaidRouter = require ('./routes/plaidRouter.js');
+
 
 //middleware
 /* app.use(cors());

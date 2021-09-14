@@ -1,6 +1,4 @@
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
@@ -22,6 +20,7 @@ export default {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-react', '@babel/preset-env'],
+          plugins: ["@babel/plugin-transform-modules-commonjs"],
         },
       },
       {

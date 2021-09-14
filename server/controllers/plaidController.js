@@ -1,8 +1,10 @@
 import 'dotenv/config.js';
-const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
+const plaidController = {};
+import pkg from 'plaid';
+const { Configuration, PlaidApi, plaidEnvironments } = pkg;
 
 const configuration = new Configuration({
-  basePath: PlaidEnvironments[process.env.PLAID_ENV],
+  basePath: 'https://sandbox.plaid.com',
   baseOptions: {
     headers: {
       'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID,
@@ -13,7 +15,7 @@ const configuration = new Configuration({
 const client = new PlaidApi(configuration);
 
 //Create one-time Link Token to authenticate app
-async function createLinkToken (req, res, next){
+plaidController.createLinkToken = async (req, res, next) => {
   // Get the client_user_id by searching for the current user
   const user = await User.find('custom_testuser01');
   const clientUserId = user.id;
@@ -30,9 +32,11 @@ async function createLinkToken (req, res, next){
   };
   try {
     const createTokenResponse = await client.linkTokenCreate(request);
-    response.json(createTokenResponse.data);
+    res.json(createTokenResponse.data);
   } catch (error) {
     // handle error
   }
+  return next();
+};
 
-}
+export default plaidController;
