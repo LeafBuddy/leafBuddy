@@ -7,7 +7,9 @@ const Main = (props) => {
   return (
     <div id='Main' className='container'>
       <NavBar />
-      <DataContainer />
+      <div className='mainContainer'>
+        <DataContainer />
+      </div>
     </div>
   );
 };
