@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require ('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -20,8 +20,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-react'],
+          presets: ['@babel/preset-react', '@babel/preset-env'],
+          plugins: ["@babel/plugin-transform-modules-commonjs"],
         },
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+            fullySpecified: false
+        }
       },
       {
         test: /\.s[ac]ss$/i,
@@ -50,8 +57,9 @@ module.exports = {
     static: './client',
     historyApiFallback: true,
     proxy: {
-      '/api/**': {target: 'http://localhost:3000', secure: false},
-      '/auth/**': {target: 'http://localhost:3000', secure: false},
+      '/plaid': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
+/*       '/bank': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
+ */      // '/auth/**': {target: 'http://localhost:4000', secure: false},
     }
   },
   resolve: {

@@ -1,26 +1,26 @@
 const path = require('path');
-const dotenv = require('dotenv')
-const cors = require('cors')
+const dotenv = require('dotenv');
+const cors = require('cors');
 const express = require('express');
 const app = express();
+dotenv.config({path: path.resolve(__dirname, './config/config.env' )});
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
-dotenv.config({path: path.resolve(__dirname, './config/config.env' )})
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-
+const plaidRouter =require('./routes/plaidRouter.js');
 
 //middleware
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+/* app.use(passport.initialize());
+app.use(passport.session()); */
 // app.use(cookieSession({
 //     name: 'session',
 //     keys: ['key1','key2'],
 // }))
-console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
+//console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
  
 //passport strategy
 // passport.use(
@@ -79,7 +79,7 @@ console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
 //     prompt: 'consent',
 //   })
 // );
-// // ^^ provides read write access to user calendars and events within calendar, see https://developers.google.com/calendar/api/guides/auth
+// ^^ provides read write access to user calendars and events within calendar, see https://developers.google.com/calendar/api/guides/auth
 // app.get(
 //   '/google/callback',
 //   passport.authenticate('google', {
@@ -98,7 +98,9 @@ app.get('/loginfailure', (req, res) =>
 );
 app.use(express.static(path.resolve(__dirname, '../build')));
 
-//serve css files
+//plaid router
+app.use('/plaid', plaidRouter);
+
 app.get('/style/style.scss', (_req, res) => {
   res.set('Content-Type', 'text/css');
   res.sendFile(path.resolve(__dirname, '..', 'assets', 'css', 'style.scss'));
@@ -110,7 +112,7 @@ app.get('/js/:file', (req, res) => {
 
 //default route handler
 app.get('/', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, '../index.html'));
+  res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 //global error handler

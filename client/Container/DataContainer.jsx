@@ -1,6 +1,6 @@
-import React from 'react';
-import TransactionAnalytics from '../Components/TransactionAnalytics';
-import TransactionContainer from '../Container/TransactionContainer';
+const React = require('react');
+const TransactionAnalytics = require('../Components/TransactionAnalytics');
+const TransactionContainer = require('../Container/TransactionContainer');
 
 const DataContainer = (props) => {
   return (
@@ -10,4 +10,4 @@ const DataContainer = (props) => {
     </div>
   );
 };
-export default DataContainer;
+module.exports =  DataContainer;

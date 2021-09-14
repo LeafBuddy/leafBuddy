@@ -1,15 +1,15 @@
 const regeneratorRuntime = require('regenerator-runtime');
 const axios = require('axios');
-
-import React, { useState, useEffect } from 'react';
-import { ReactDOM } from 'react';
-import {
-  BrowserRouter as Router,
+const React = require('react');
+const { useState, useEffect } = require('react');
+const { ReactDOM } = require('react');
+const {
+  Router,
   Switch,
   Route,
   Link,
   Redirect,
-} from 'react-router-dom';
+} = require('react-router-dom');
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -94,4 +94,4 @@ function Login() {
   }
 }
 
-export default Login;
+module.exports = Login;
