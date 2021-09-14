@@ -1,7 +1,7 @@
 const React = require('react');
 
 const Transaction = (props) => {
-  const { merchant, icon, amount, carbonAmount } = props.props;
+  const { merchant, icon, amount, carbonAmount } = props;
   return (
     <div className='transactionComponent'>
       <div className='txnIcon'>{icon}</div>
@@ -11,4 +11,4 @@ const Transaction = (props) => {
     </div>
   );
 };
-export default Transaction;
+module.exports = Transaction;

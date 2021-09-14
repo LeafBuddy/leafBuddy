@@ -14,8 +14,8 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+/* app.use(passport.initialize());
+app.use(passport.session()); */
 // app.use(cookieSession({
 //     name: 'session',
 //     keys: ['key1','key2'],
@@ -79,7 +79,7 @@ console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
 //     prompt: 'consent',
 //   })
 // );
-// // ^^ provides read write access to user calendars and events within calendar, see https://developers.google.com/calendar/api/guides/auth
+// ^^ provides read write access to user calendars and events within calendar, see https://developers.google.com/calendar/api/guides/auth
 // app.get(
 //   '/google/callback',
 //   passport.authenticate('google', {
@@ -112,7 +112,7 @@ app.get('/js/:file', (req, res) => {
 
 //default route handler
 app.get('/', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, '../index.html'));
+  res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 //global error handler

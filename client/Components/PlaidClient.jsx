@@ -7,8 +7,8 @@ const {
 } = require('react-plaid-link');
 
 
-
-const PlaidClient = ({linkToken}) => {
+const PlaidClient = (props) => {
+  console.log(props);
   const onSuccess = useCallback((public_token, metadata) => {
     // send public_token to server
     const response = fetch('/plaid/public', {
@@ -22,13 +22,15 @@ const PlaidClient = ({linkToken}) => {
   }, []);
 
   const config = {
-    token: linkToken,
+    // token: props.linkToken,
     onSuccess,
   };
 
-// // open = Plaid window opens
-// // ready = ready is a passthrough for onLoad and will be true when Link is ready to be opened
-const { open, ready } = usePlaidLink(config);
+  // // open = Plaid window opens
+  // // ready = ready is a passthrough for onLoad and will be true when Link is ready to be opened
+  const { open, ready } = usePlaidLink(config);
+
+
   return (
     <button onClick={() => open()} disabled={!ready}>
       Link account
@@ -36,4 +38,4 @@ const { open, ready } = usePlaidLink(config);
   );
 };
 
-export default PlaidClient; 
+module.exports = PlaidClient; 

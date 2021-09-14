@@ -10,4 +10,4 @@ const DataContainer = (props) => {
     </div>
   );
 };
-export default DataContainer;
+module.exports =  DataContainer;

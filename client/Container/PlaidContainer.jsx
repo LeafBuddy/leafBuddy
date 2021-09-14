@@ -1,13 +1,12 @@
-import React, {useState, useEffect } from 'react';
-import PlaidClient from '../Components/PlaidClient.jsx';
-
+const React = require('react');
+const { useState, useEffect } = require('react');
+const PlaidClient = require('../Components/PlaidClient.jsx');
 
 const PlaidContainer = () => {
-
   const [linkToken, setLinkToken] = useState(null);
 
   const generateToken = async () => {
-    const response = await fetch('/api/plaid/link', {
+    const response = await fetch('/plaid', {
       method: 'GET',
     });
     const data = await response;
@@ -17,20 +16,20 @@ const PlaidContainer = () => {
     generateToken();
   }, []);
 
+  console.log(linkToken);
+
+  if (!linkToken) {
+    return <>Still loading...</>;
+  }
 
   return (
-    linkToken != null 
-    ? 
     <div>
       <PlaidClient linkToken={linkToken} /> 
     </div>
-    : 
-    <>
-    </>
   );
 };
 
-export default PlaidContainer;
+module.exports = PlaidContainer;
 
 
 

@@ -6,13 +6,13 @@ const plaidControllers = require('../controllers/plaidControllers.js');
 //   res.status(200).send('check');
 // });
 
-plaidRouter.get('/linkToken', plaidControllers.createLinkToken, (req, res) => {
-  // console.log('router firing');
+plaidRouter.get('/', plaidControllers.createLinkToken, (req, res) => {
+  console.log('router firing');
   res.status(200).send(res.locals.linkToken);
 });
 
-plaidRouter.post('/publicToken', plaidControllers.publicToken, (req, res) => {
-  console.log('hitting public router')
+plaidRouter.post('/publictoken', plaidControllers.publicToken, (req, res) => {
+  console.log('hitting public router');
   res.status(200).json();
 });
 

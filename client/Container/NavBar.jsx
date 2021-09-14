@@ -13,4 +13,4 @@ const NavBar = (props) => {
     </div>
   );
 };
-export default NavBar;
+module.exports = NavBar;

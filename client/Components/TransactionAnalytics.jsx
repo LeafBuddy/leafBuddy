@@ -23,4 +23,4 @@ const TransactionAnalytics = (props) => {
     </div>
   );
 };
-export default TransactionAnalytics;
+module.exports =  TransactionAnalytics;

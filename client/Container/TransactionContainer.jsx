@@ -10,7 +10,7 @@ const TransactionContainer = (props) => {
     const transactionList = [];
     for (let i = 0; i < 10; i++) {
       const el = {
-        icon: `🛒`,
+        icon: '🛒',
         merchant: faker.company.companyName(),
         amount: `$ ${faker.finance.amount()}`,
         carbonAmount: faker.finance.amount(),
@@ -30,4 +30,4 @@ const TransactionContainer = (props) => {
   );
 };
 
-export default TransactionContainer;
+module.exports = TransactionContainer;

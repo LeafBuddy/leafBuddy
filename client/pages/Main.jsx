@@ -1,7 +1,8 @@
 const regeneratorRuntime = require('regenerator-runtime');
-import React from 'react';
-import NavBar from '../Container/NavBar';
-import DataContainer from '../Container/DataContainer';
+const React = require('react');
+const { useState, useEffect } = require('react');
+const NavBar = require('../Container/NavBar');
+const DataContainer = require('../Container/DataContainer');
 
 const Main = (props) => {
   return (
@@ -13,4 +14,4 @@ const Main = (props) => {
     </div>
   );
 };
-export default Main;
+module.exports = Main;
