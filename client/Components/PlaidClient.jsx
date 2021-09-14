@@ -22,7 +22,8 @@ const PlaidClient = (props) => {
   }, []);
 
   const config = {
-    // token: props.linkToken,
+    // eslint-disable-next-line react/prop-types
+    token: props.linkToken,
     onSuccess,
   };
 

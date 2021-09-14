@@ -26,29 +26,28 @@ const plaidControllers = {};
 
 
 plaidControllers.createLinkToken = async (req, res, next) => {
-  res.locals.linkToken = 'adf';
-  return next();
-  // try {
-  //   const response = await plaidClient.createLinkToken({
-  //     user: {
-  //       client_user_id: 'user_good',
-  //     },
-  //     client_name: 'LeafBuddy',
-  //     products: ['auth', 'transactions'],
-  //     language: 'en',
-  //     country_codes: ['US'],
-  //     account_filters: {
-  //       depository: {
-  //         account_subtypes: ['checking', 'savings'],
-  //       },
-  //     },
-  //   });
-  //   res.locals.linkToken = response.data.link_token;
-  //   return next();
-  // } catch (err) {
-  //   console.log('Error with token:', err);
-  //   return next(err);
-  // }
+
+  try {
+    const response = await plaidClient.linkTokenCreate({
+      user: {
+        client_user_id: 'user_good',
+      },
+      client_name: 'LeafBuddy',
+      products: ['auth', 'transactions'],
+      language: 'en',
+      country_codes: ['US'],
+      account_filters: {
+        depository: {
+          account_subtypes: ['checking', 'savings'],
+        },
+      },
+    });
+    res.locals.linkToken = response.data.link_token;
+    return next();
+  } catch (err) {
+    console.log('Error with token:', err);
+    return next(err);
+  }
 }; 
 
 plaidControllers.publicToken = async (req, res, next) => {
@@ -57,7 +56,7 @@ plaidControllers.publicToken = async (req, res, next) => {
 
 
 
-}
+};
 
 
 module.exports = plaidControllers; 

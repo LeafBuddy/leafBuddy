@@ -5,18 +5,14 @@ const PlaidClient = require('../Components/PlaidClient.jsx');
 const PlaidContainer = () => {
   const [linkToken, setLinkToken] = useState(null);
 
-  const generateToken = async () => {
-    const response = await fetch('/plaid', {
+  useEffect( () => {
+    fetch('/plaid/linkToken', {
       method: 'GET',
-    });
-    const data = await response;
-    setLinkToken(data);
-  };
-  useEffect(() => {
-    generateToken();
+      'Content-Type': 'application/json',
+    })
+      .then(response => response.json())
+      .then(data => setLinkToken(data));
   }, []);
-
-  console.log(linkToken);
 
   if (!linkToken) {
     return <>Still loading...</>;

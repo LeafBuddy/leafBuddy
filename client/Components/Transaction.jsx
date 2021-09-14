@@ -1,6 +1,7 @@
 const React = require('react');
 
 const Transaction = (props) => {
+  // eslint-disable-next-line react/prop-types
   const { merchant, icon, amount, carbonAmount } = props;
   return (
     <div className='transactionComponent'>

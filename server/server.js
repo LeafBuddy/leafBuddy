@@ -3,9 +3,9 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const express = require('express');
 const app = express();
+dotenv.config({path: path.resolve(__dirname, './config/config.env' )});
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
-dotenv.config({path: path.resolve(__dirname, './config/config.env' )})
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const plaidRouter =require('./routes/plaidRouter.js');
 
