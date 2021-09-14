@@ -11,18 +11,20 @@ const PlaidClient = (props) => {
   console.log(props);
   const onSuccess = useCallback((public_token, metadata) => {
     // send public_token to server
-    const response = fetch('/plaid/public', {
+    const response = fetch('/plaid/publicToken', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ public_token }),
-    });
-    // Handle response ...
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
   }, []);
 
   const config = {
-    // token: props.linkToken,
+    // eslint-disable-next-line react/prop-types
+    token: props.linkToken,
     onSuccess,
   };
 
