@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/LeafBuddy/leafBuddy#readme",
   "dependencies": {
+    "axios": "^0.21.4",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "express": "^4.17.1",
@@ -37,6 +38,7 @@
     "@babel/preset-react": "^7.14.5",
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
+    "plaid": "^9.0.0-beta.15",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.0"
   }

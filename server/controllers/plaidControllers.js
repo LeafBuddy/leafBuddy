@@ -1,5 +1,5 @@
 import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid';
-import dotenv from 'dotenv';
+import 'dotenv/config.js';
 
 const configuration = new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV],
@@ -34,6 +34,7 @@ plaidControllers.createLinkToken = async (req, res, next) => {
       client_name: 'LeafBuddy',
       products: ['auth', 'transactions'],
       language: 'en',
+      country_codes: ['US'],
       account_filters: {
         depository: {
           account_subtypes: ['checking', 'savings'],
@@ -42,13 +43,11 @@ plaidControllers.createLinkToken = async (req, res, next) => {
     });
     res.locals.linkToken = response.data.link_token;
     return next();
-  } catch (error) {
-    console.log('Error with token:', response.data.link_token);
+  } catch (err) {
+    console.log('Error with token:', err);
     return next(err);
   }
 }; 
-
-
 
 
 
