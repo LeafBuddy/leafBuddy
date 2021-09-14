@@ -59,6 +59,7 @@ module.exports = {
     proxy: {
       '/plaid': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
       '/auth/**': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
+/*       '/bank': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},*/
     }
   },
   resolve: {

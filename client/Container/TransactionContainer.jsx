@@ -1,16 +1,22 @@
 const React = require('react');
 const { useState } = require('react');
-const Transaction = require('../Components/Transaction');
+import Transaction from '../Components/Transaction';
 const faker = require('faker');
 
-const TransactionContainer = (props) => {
+export default function TransactionContainer(props) {
   const [transactions, setTransactions] = useState([]);
 
   const transactionRenderer = () => {
     const transactionList = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
+      const txnDate = `${faker.date.past()}`
+        .split(' ')
+        .slice(1, 3)
+        .reverse()
+        .join(' ');
       const el = {
-        icon: '🛒',
+        icon: `🛒`,
+        date: txnDate,
         merchant: faker.company.companyName(),
         amount: `$ ${faker.finance.amount()}`,
         carbonAmount: faker.finance.amount(),
@@ -28,6 +34,4 @@ const TransactionContainer = (props) => {
       <div>{transactionRenderer()}</div>
     </div>
   );
-};
-
-module.exports = TransactionContainer;
+}

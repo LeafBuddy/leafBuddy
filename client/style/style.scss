@@ -4,7 +4,7 @@ h1,
 h2,
 h3 {
   font-family: 'Coustard', serif;
-  color: black;
+  color: #1f1235;
   margin: 0;
 }
 
@@ -26,9 +26,9 @@ h3 {
   background-size: 200% auto;
   color: white;
   box-shadow: 0 0 0px #eee;
-  border-radius: 20px;
+  border-radius: 10px;
   display: block;
-  border: 0px;
+  border: 1px;
   white-space: nowrap;
   text-align: center;
 }
@@ -39,9 +39,53 @@ h3 {
   text-decoration: none;
 }
 
+.btn-grad:active {
+  background-position: left center; /* change the direction of the change here */
+  color: #67568c;
+  text-decoration: none;
+}
+
+.loginLogo {
+  margin-bottom: 30px;
+}
+
+.loginModule {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+  margin: 0 auto;
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 24px;
+}
+
+.loginTextbox {
+  padding: 10px 40px;
+  border: 1px solid rgba(149, 157, 165, 0.2);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 24px;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+
+.loginTextbox:focus {
+  outline: 0;
+}
+
+.loginWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 2fr;
+  height: 100vh;
+}
+
 body {
   margin: 0 auto;
+  height: 100%;
   background-color: #faaca8;
+  color: #1f1235;
   font-family: 'Space Grotesk', sans-serif;
   background-image: linear-gradient(
     19deg,
@@ -50,18 +94,27 @@ body {
     #85f0b0 100%
   );
 }
+#logIn {
+  margin-bottom: 15px;
+}
+
+#loginButton {
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
 
 .container {
   display: grid;
-  grid-template-rows: 1fr 10fr;
+  grid-template-rows: 0.75fr 10fr;
 }
 
 .navBar {
   background-color: white;
   display: grid;
   grid-row: 1/2;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 24px;
   grid-template-columns: 1fr 10fr 1fr;
-  border-bottom: 5px solid black;
+  border-bottom: 1px solid rgba(149, 157, 165, 0.2);
   margin: 0 auto;
   position: fixed;
   top: 0;
@@ -70,6 +123,7 @@ body {
 .logo {
   grid-column: 1/2;
   margin: 0 20px;
+  align-self: center;
 }
 
 .connectToBank {
@@ -84,12 +138,12 @@ body {
 }
 
 .transactionAnalytics {
-  margin: 20px;
   padding-top: 10px;
   display: grid;
   grid-column: 1/4;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.25fr 1fr;
+  grid-template-rows: 0.25fr 10fr;
+  width: 100%;
 }
 
 .transactionAnalyticsHeader {
@@ -103,20 +157,46 @@ body {
   display: grid;
   grid-column: 1/4;
   padding-top: 15px;
-  grid-template-columns: 1fr 1fr 1fr;
+  overflow-x: auto;
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
 }
 
 .leftChart {
   grid-column: 1/2;
 }
 
-.centerChart {
+.rightChart {
+  display: grid;
   grid-column: 2/3;
+  grid-template-columns: 1fr 0.75fr 0.25fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
+  white-space: nowrap;
+  text-align: center;
 }
 
-.rightChart {
-  width: '100px';
+.footprintNumber {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-size: 5rem;
+  vertical-align: text-bottom;
+  align-self: flex-end;
+  text-align: end;
+}
+
+.footprintMeasure {
   grid-column: 3/4;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: start;
+  vertical-align: text-bottom;
+  margin-bottom: 30px;
+}
+
+.footprintLabel {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  vertical-align: text-top;
 }
 
 .dataContainer {
@@ -125,31 +205,38 @@ body {
 
 .transactionComponent {
   display: grid;
-  grid-template-columns: 0.25fr 3fr 1fr 1fr;
+  grid-template-columns: 0.25fr 0.75fr 3fr 1fr 1fr;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 10px 0px;
   align-content: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 24px;
 }
 .txnIcon {
   grid-column: 1/2;
   margin: 10px;
 }
 
-.txnMerchant {
+.txnDate {
   grid-column: 2/3;
+  align-self: center;
+  justify-self: center;
+}
+
+.txnMerchant {
+  grid-column: 3/4;
   align-self: center;
   text-align: center;
 }
 
-.txnAmount {
+.txnCarbon {
   grid-column: 4/5;
   align-self: center;
   justify-self: center;
 }
 
-.txnCarbon {
-  grid-column: 3/4;
+.txnAmount {
+  grid-column: 5/6;
   align-self: center;
   justify-self: center;
 }

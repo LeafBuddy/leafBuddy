@@ -51,39 +51,50 @@ function Login() {
       .catch((err) => console.log(err));
   }
 
+  async function onGoogleClick() {}
+
   if (!isLoggedIn) {
     return (
-      <div>
-        <h1 className='title'>Leaf Buddy</h1>
-        <div id='logIn' className='textbox'>
-          <input
-            type='text'
-            id='username'
-            placeholder={'username'}
-            onChange={(e) => setUsername(e.target.value)}
-            className='textbox'></input>
-          <div></div>
-          <input
-            type='text'
-            id='password'
-            placeholder={'password'}
-            onChange={(e) => setPassword(e.target.value)}
-            className='textbox'></input>
-        </div>
-        <div className='login' id='buttons'>
-          <button className='buttons' id='logInButton' onClick={onLoginClick}>
-            Sign in
-          </button>
-          <div> </div>
-          <button className='buttons' id='signup' onClick={onRegisterClick}>
-            Create new account
-          </button>
-          <div> </div>
-          <Link to='auth/google'>
-            <button className='buttons' id='signup'>
+      <div className='loginWrapper'>
+        <div className='loginModule'>
+          <h1 className='loginLogo'>Leaf Buddy</h1>
+          <div id='logIn'>
+            <input
+              type='text'
+              id='username'
+              placeholder={'username'}
+              onChange={(e) => setUsername(e.target.value)}
+              className='loginTextbox'></input>
+            <div></div>
+            <input
+              type='text'
+              id='password'
+              placeholder={'password'}
+              onChange={(e) => setPassword(e.target.value)}
+              className='loginTextbox'></input>
+          </div>
+          <div className='loginButtons' id='buttons'>
+            <button
+              className='btn-grad'
+              id='loginButton'
+              onClick={onLoginClick}>
+              Sign in
+            </button>
+            <div> </div>
+            <button
+              className='btn-grad'
+              id='loginButton'
+              onClick={onRegisterClick}>
+              Create new account
+            </button>
+            <div> </div>
+            <button
+              className='btn-grad'
+              id='loginButton'
+              onClick={onGoogleClick}>
               Login with Google
             </button>
-          </Link>
+          </div>
         </div>
       </div>
     );
