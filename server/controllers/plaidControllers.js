@@ -27,6 +27,7 @@ const plaidControllers = {};
 
 plaidControllers.createLinkToken = async (req, res, next) => {
   res.locals.linkToken = 'adf';
+  return next();
   // try {
   //   const response = await plaidClient.createLinkToken({
   //     user: {

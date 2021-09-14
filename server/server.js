@@ -20,7 +20,7 @@ app.use(passport.session()); */
 //     name: 'session',
 //     keys: ['key1','key2'],
 // }))
-console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
+//console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
  
 //passport strategy
 // passport.use(
