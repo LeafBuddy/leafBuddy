@@ -1,6 +1,6 @@
-import express from 'express'; 
+const express = require('express'); 
 const router = express.Router(); 
-import plaidControllers from '../controllers/plaidControllers.js';
+const plaidControllers = require('../controllers/plaidControllers.js');
 
 // router.get('/', (req, res) => {
 //   res.status(200).send('check');

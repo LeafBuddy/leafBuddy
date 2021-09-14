@@ -1,15 +1,15 @@
-import React, {useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Login from './pages/Login';
-import Main from './pages/Main'; 
-import PlaidClient from './Components/PlaidClient.jsx';
+const React, {useState, useEffect } = require('react');
+const { Router, Switch, Route, Link } = require('react-router-dom');
+const Login = require('./pages/Login');
+const Main = require('./pages/Main'); 
+const PlaidClient = require('./Components/PlaidClient.jsx');
 
 
 export default function App() {
 
   const [linkToken, setLinkToken] = useState(null);
 
-  //get link token from backend 
+  //get link token = require(backend 
   useEffect(async () => {
     const res = await fetch('/plaid/link', {headers: {'Content-Type': 'application/json'}});
     await setLinkToken(res);

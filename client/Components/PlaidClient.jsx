@@ -1,9 +1,9 @@
-import React, { useCallback, useState, useEffect } from 'react';
-import {
+const React, { useCallback, useState, useEffect } = require('react');
+const {
   usePlaidLink,
   PlaidLinkOptions,
   PlaidLinkOnSuccess,
-} from 'react-plaid-link';
+} = require('react-plaid-link');
 
 
 

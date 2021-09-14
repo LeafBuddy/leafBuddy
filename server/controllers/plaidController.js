@@ -1,7 +1,6 @@
-import 'dotenv/config.js';
+require('dotenv/config.js');
 const plaidController = {};
-import pkg from 'plaid';
-const { Configuration, PlaidApi, plaidEnvironments } = pkg;
+const { Configuration, PlaidApi, plaidEnvironments } = require ('plaid');
 
 const configuration = new Configuration({
   basePath: 'https://sandbox.plaid.com',
