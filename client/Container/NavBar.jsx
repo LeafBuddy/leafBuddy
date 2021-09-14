@@ -3,10 +3,13 @@ import { render } from 'react-dom';
 
 const NavBar = (props) => {
   return (
-    <div
-      style={{ backgroundColor: 'orange', height: '100px', margin: '0 auto' }}>
-      <h1>leafBuddy</h1>
-      <button>Connect your Bank</button>
+    <div className='navBar'>
+      <div className='logo'>
+        <h1>LeafBuddy</h1>
+      </div>
+      <div className='connectToBank'>
+        <button className='btn-grad'>Connect your Bank</button>
+      </div>
     </div>
   );
 };
