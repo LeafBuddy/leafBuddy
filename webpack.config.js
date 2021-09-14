@@ -58,7 +58,7 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       '/plaid': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
-      // '/auth/**': {target: 'http://localhost:4000', secure: false},
+      '/auth/**': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
     }
   },
   resolve: {
