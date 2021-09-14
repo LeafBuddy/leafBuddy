@@ -7,6 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url)); // https://stackoverf
 export default {
   entry: {
     index: './client/index.js',
+    styles: './client/style/style.scss',
   },
   devtool: 'eval-source-map',
   output: {
@@ -29,17 +30,6 @@ export default {
         test: /\.s[ac]ss$/i,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
       },
       {
         test: /\.(png|jpg|gif)$/i,
