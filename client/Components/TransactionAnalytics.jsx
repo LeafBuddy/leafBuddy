@@ -1,12 +1,25 @@
 import React from 'react';
+import GaugeChart from './GaugeChart';
+import BarChart from './BarChart';
+import LineChart from './LineChart';
 
 const TransactionAnalytics = (props) => {
   return (
-    <div>
-      <h2>TransactionAnalytics</h2>
-      <h1>Total Carbon footprint last month</h1>
-      <h1>7d moving average of carbon footprint</h1>
-      <h1>Timeseries of carbon footprint purchases</h1>
+    <div className='transactionAnalytics'>
+      <div className='transactionAnalyticsHeader'>
+        <h3>Transaction Analytics</h3>
+      </div>
+      <div className='charts'>
+        <div className='leftChart'>
+          <GaugeChart />
+        </div>
+        <div className='centerChart'>
+          <BarChart />
+        </div>
+        <div className='rightChart'>
+          <LineChart />
+        </div>
+      </div>
     </div>
   );
 };

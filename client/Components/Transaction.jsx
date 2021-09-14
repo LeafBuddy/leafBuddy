@@ -1,14 +1,13 @@
 import React from 'react';
 
 const Transaction = (props) => {
+  const { merchant, icon, amount, carbonAmount } = props.props;
   return (
-    <div style={{ backgroundColor: 'purple', color: 'white' }}>
-      <h2>Transaction</h2>
-      <h3>Icon</h3>
-      <h3>Merchant</h3>
-      <h3>Currency</h3>
-      <h3>Amount</h3>
-      <h3>Carbon Amount</h3>
+    <div className='transactionComponent'>
+      <div className='txnIcon'>{icon}</div>
+      <div className='txnMerchant'>{merchant}</div>
+      <div className='txnCarbon'>{carbonAmount}</div>
+      <div className='txnAmount'>{amount}</div>
     </div>
   );
 };
