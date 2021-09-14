@@ -1,16 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Coustard:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coustard:wght@900&family=Space+Grotesk:wght@500&display=swap');
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: 'Coustard', serif;
   color: black;
+  margin: 0;
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #ec6f66 0%,
+    #f3a183 51%,
+    #ec6f66 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 0px #eee;
+  border-radius: 20px;
+  display: block;
+  border: 0px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 body {
+  margin: 0 auto;
   background-color: #faaca8;
+  font-family: 'Space Grotesk', sans-serif;
   background-image: linear-gradient(
     19deg,
     #faaca8 0%,
     #ddd6f3 50%,
     #85f0b0 100%
   );
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+}
+
+.navBar {
+  background-color: white;
+  display: grid;
+  grid-row: 1/2;
+  grid-template-columns: 1fr 10fr 1fr;
+  border-bottom: 5px solid black;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+}
+
+.logo {
+  grid-column: 1/2;
+  margin: 0 20px;
+}
+
+.connectToBank {
+  align-self: center;
+  grid-column: 3/4;
+}
+
+.mainContainer {
+  display: grid;
+  grid-row: 2/3;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.transactionAnalytics {
+  margin: 20px;
+  padding-top: 10px;
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.25fr 1fr;
+}
+
+.transactionAnalyticsHeader {
+  display: grid;
+  margin: 0;
+  grid-row: 1/2;
+  grid-column: 1/4;
+}
+
+.charts {
+  display: grid;
+  grid-column: 1/4;
+  padding-top: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.leftChart {
+  grid-column: 1/2;
+}
+
+.centerChart {
+  grid-column: 2/3;
+}
+
+.rightChart {
+  width: '100px';
+  grid-column: 3/4;
+}
+
+.dataContainer {
+  grid-column: 2/3;
+}
+
+.transactionComponent {
+  display: grid;
+  grid-template-columns: 0.25fr 3fr 1fr 1fr;
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px 0px;
+  align-content: center;
+}
+.txnIcon {
+  grid-column: 1/2;
+  margin: 10px;
+}
+
+.txnMerchant {
+  grid-column: 2/3;
+  align-self: center;
+  text-align: center;
+}
+
+.txnAmount {
+  grid-column: 4/5;
+  align-self: center;
+  justify-self: center;
+}
+
+.txnCarbon {
+  grid-column: 3/4;
+  align-self: center;
+  justify-self: center;
 }
