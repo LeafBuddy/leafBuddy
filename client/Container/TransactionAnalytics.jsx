@@ -1,7 +1,6 @@
 import React from 'react';
-import GaugeChart from './GaugeChart';
-import BarChart from './BarChart';
-import LineChart from './LineChart';
+import YourCarbonFootprint from '../Components/YourCarbonFootprint';
+import BarChart from '../Components/BarChart';
 
 const TransactionAnalytics = (props) => {
   return (
@@ -11,14 +10,9 @@ const TransactionAnalytics = (props) => {
       </div>
       <div className='charts'>
         <div className='leftChart'>
-          <GaugeChart />
-        </div>
-        <div className='centerChart'>
           <BarChart />
         </div>
-        <div className='rightChart'>
-          <LineChart />
-        </div>
+        <YourCarbonFootprint />
       </div>
     </div>
   );
