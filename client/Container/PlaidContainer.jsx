@@ -2,7 +2,7 @@ const React = require('react');
 const { useState, useEffect } = require('react');
 const PlaidClient = require('../Components/PlaidClient.jsx');
 
-export default function PlaidContainer() {
+const PlaidContainer = () => {
   const [linkToken, setLinkToken] = useState(null);
 
   useEffect(() => {
@@ -23,4 +23,6 @@ export default function PlaidContainer() {
       <PlaidClient linkToken={linkToken} />
     </div>
   );
-}
+};
+
+module.exports = PlaidContainer;
