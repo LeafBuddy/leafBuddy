@@ -1,9 +1,9 @@
-const React = require('react');
+import React from 'react';
 const { useState } = require('react');
 import Transaction from '../Components/Transaction';
 const faker = require('faker');
 
-export default function TransactionContainer(props) {
+export default function TransactionContainer() {
   const [transactions, setTransactions] = useState([]);
 
   const transactionRenderer = () => {
