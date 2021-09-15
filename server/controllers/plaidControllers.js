@@ -1,6 +1,8 @@
 const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
 require('dotenv/config.js');
 const moment = require('moment');
+
+
 const configuration = new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV],
   baseOptions: {
@@ -71,7 +73,7 @@ plaidControllers.getTransactions = async (req, res, next) => {
   const today = now.format('YYYY-MM-DD');
   const fiveDaysAgo = now.subtract(5, 'days').format('YYYY-MM-DD');
 
-  const  = process.env.PLAID_ACCESS_TOKEN;
+  const  = 'access-development-bfb5c15e-985c-4eeb-b744-02932bfe8356';
   console.log();
 
   try {
