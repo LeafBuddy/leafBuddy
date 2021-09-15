@@ -5,37 +5,12 @@ const faker = require('faker');
 
 export default function TransactionContainer(props) {
   const [transactions] = useState(props.props[0]);
-  useEffect(() => {
-    console.log(
-      transactions.map((el) => {
-        el;
-      })
-    );
-  }, []);
-
   function emojiMapper(category) {
-    if (
-      category[0] === 'Shops' ||
-      category[0] === 'Service' ||
-      category[0] === 'Travel'
-    ) {
-      category = category[1];
-    } else {
-      category = category[0];
-    }
     switch (category) {
-      case 'Pharmacies':
-        return `💊`;
       case 'Taxi':
         return `🚕`;
-      case 'Food and Drink':
+      case 'Restaurants':
         return `🍕`;
-      case 'Transfer':
-        return `💸`;
-      case 'Insurance':
-        return `💰`;
-      case 'Automotive':
-        return `🚗`;
       default:
         return `🛒`;
     }
@@ -47,9 +22,10 @@ export default function TransactionContainer(props) {
         const txnData = {
           icon: emojiMapper(el.category),
           date: el.transactionDate,
-          merchant: el.merchantName ? el.merchantName : el.name,
+          merchant: el.merchant ? el.merchant : el.name,
           amount: `$${el.amount}`,
-          carbonAmount: `${faker.finance.amount()}kg`,
+          carbonAmount: `${el.carbonAmount.toFixed(1)}kg`,
+          carbonAmountNum: parseFloat(el.carbonAmount.toFixed(1)),
         };
         return <Transaction className='transaction' key={i} props={txnData} />;
       })}
