@@ -45,6 +45,5 @@ carbonScore.score = (req, res, next) => {
   return next();
 };
 
-
 module.exports = carbonScore;
 
