@@ -68,6 +68,7 @@ app.get(
   passport.authenticate('google', {
     scope: [
       'profile',
+      'email',
       'https://www.googleapis.com/auth/calendar',
       'https://www.googleapis.com/auth/calendar.events',
     ],
@@ -75,6 +76,7 @@ app.get(
     prompt: 'consent',
   })
 );
+// eslint-disable-next-line max-len
 //^^ provides read write access to user calendars and events within calendar, see https://developers.google.com/calendar/api/guides/auth
 app.get(
   '/auth/google/callback',
@@ -128,3 +130,5 @@ const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
+
+module.exports = app;
