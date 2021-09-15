@@ -20,5 +20,4 @@ plaidRouter.get('/transactions', plaidControllers.getTransactions, carbonScore.s
   res.status(200).json(res.locals.carbonlist);
 });
 
-
 module.exports = plaidRouter;
