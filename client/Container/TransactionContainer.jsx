@@ -1,37 +1,39 @@
-import React from 'react';
-const { useState } = require('react');
+import React, { setState } from 'react';
+const { useState, useEffect } = require('react');
 import Transaction from '../Components/Transaction';
 const faker = require('faker');
 
-export default function TransactionContainer() {
-  const [transactions, setTransactions] = useState([]);
-
+export default function TransactionContainer(props) {
+  const [transactions] = useState(props.props[0]);
+  let transactionList;
+  useEffect(() => {
+    if (transactions.length > 0) {
+      transactionList = transactionRenderer();
+    }
+  }, []);
   const transactionRenderer = () => {
-    const transactionList = [];
-    for (let i = 0; i < 30; i++) {
-      const txnDate = `${faker.date.past()}`
-        .split(' ')
-        .slice(1, 3)
-        .reverse()
-        .join(' ');
-      const el = {
+    const results = transactions.map((el, i) => {
+      const txnData = {
         icon: `🛒`,
-        date: txnDate,
-        merchant: faker.company.companyName(),
-        amount: `$ ${faker.finance.amount()}`,
+        date: el.date,
+        merchant: el.merchantName,
+        amount: `${el.amount}`,
         carbonAmount: `${faker.finance.amount()}kg`,
       };
-      // TODO: Update with map statement to pass props down to transaction components
-      transactionList.push(
-        <Transaction className='transaction' key={i} props={el} />
-      );
-    }
-    return transactionList;
+      return <Transaction className='transaction' key={i} props={txnData} />;
+    });
+    return results;
   };
 
   return (
     <div>
-      <div>{transactionRenderer()}</div>
+      <div>
+        {() => {
+          if (transactions) {
+            return transactionRenderer();
+          }
+        }}
+      </div>
     </div>
   );
 }
