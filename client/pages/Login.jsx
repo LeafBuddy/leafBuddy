@@ -2,13 +2,15 @@ const axios = require('axios');
 const React = require('react');
 const { useState, useEffect } = require('react');
 const { Redirect } = require('react-router-dom');
+const regeneratorRuntime = require("regenerator-runtime");
 
-function Login() {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [failed, setFailed] = useState(false);
   const [registered, setRegistered] = useState(false);
+
   useEffect(() => {
     console.log(username, password);
     console.log('isLoggedIn state: ', isLoggedIn);
@@ -42,7 +44,6 @@ function Login() {
       })
       .catch((err) => console.log(err));
   }
-
 
   if (!isLoggedIn) {
     return (
@@ -80,8 +81,8 @@ function Login() {
             </button>
             <div> </div>
             <form>
-              <button 
-                formaction='/auth/google'
+              <button
+                formAction='/auth/google'
                 className='btn-grad'
                 id='loginButton'>
                 Login with Google

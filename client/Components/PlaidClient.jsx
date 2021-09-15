@@ -1,14 +1,12 @@
 const React = require('react');
-const { useCallback, useState, useEffect } = require('react');
+const { useCallback } = require('react');
 const {
   usePlaidLink,
   PlaidLinkOptions,
   PlaidLinkOnSuccess,
 } = require('react-plaid-link');
 
-
 const PlaidClient = (props) => {
-  console.log(props);
   const onSuccess = useCallback((public_token, metadata) => {
     // send public_token to server
     const response = fetch('/plaid/publicToken', {
@@ -18,8 +16,8 @@ const PlaidClient = (props) => {
       },
       body: JSON.stringify({ public_token }),
     })
-      .then(res => res.json())
-      .then(data => console.log(data));
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   }, []);
 
   const config = {
@@ -32,12 +30,17 @@ const PlaidClient = (props) => {
   // // ready = ready is a passthrough for onLoad and will be true when Link is ready to be opened
   const { open, ready } = usePlaidLink(config);
 
-
   return (
-    <button onClick={() => open()} disabled={!ready}>
-      Link account
-    </button>
+    <div className='connectToBank'>
+      <button
+        className='btn-grad'
+        id='connectToBankButton'
+        onClick={() => open()}
+        disabled={!ready}>
+        🏦 <span className='bankButtonText'>Connect your Bank</span>
+      </button>
+    </div>
   );
-};
+}
 
-module.exports = PlaidClient; 
+module.exports = PlaidClient;

@@ -1,18 +1,15 @@
 const React = require('react');
-const { render } = require('react-dom');
+const PlaidContainer = require('../Container/PlaidContainer');
 
-const NavBar = (props) => {
+const NavBar = () => {
   return (
     <div className='navBar'>
       <div className='logo'>
         <h1>LeafBuddy</h1>
       </div>
-      <div className='connectToBank'>
-        <button className='btn-grad' id='connectToBankButton'>
-          🏦 <span className='bankButtonText'>Connect your Bank</span>
-        </button>
-      </div>
+      <PlaidContainer />
     </div>
   );
-};
+}
+
 module.exports = NavBar;
