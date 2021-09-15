@@ -34,10 +34,8 @@ const Co2Chart = (props) => {
   }, []);
 
   return (
-    <ResponsiveContainer width='100%' height='100%'>
+    <ResponsiveContainer width='99%' height='100%'>
       <BarChart
-        width={500}
-        height={300}
         data={data}
         margin={{
           top: 5,

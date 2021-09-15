@@ -10,7 +10,7 @@ h3 {
 
 body {
   margin: 0 auto;
-  height: 100vh;
+  height: 130vh;
   background-color: #faaca8;
   color: #1f1235;
   font-family: 'Space Grotesk', sans-serif;
@@ -149,7 +149,7 @@ body {
   .mainContainer {
     display: grid;
     grid-row: 2/3;
-    grid-template-rows: 0.25fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 4fr 1fr;
   }
 
@@ -166,7 +166,6 @@ body {
     display: grid;
     grid-template: 1fr 4fr 1fr;
     grid-template-rows: 100px 10fr;
-    height: 100vh;
   }
 
   .transactionAnalyticsHeader {
@@ -180,19 +179,21 @@ body {
     display: grid;
     grid-column: 1/4;
     padding-top: 15px;
-    overflow-x: auto;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     width: 100%;
   }
 
   .leftChart {
     grid-column: 1/2;
+    width: 99%;
+    margin: -10px;
     z-index: -1;
   }
 
   .rightChart {
     display: grid;
     grid-column: 2/3;
+    width: 100%;
     grid-template-columns: 1fr 0.75fr 0.25fr 1fr;
     grid-template-rows: 1.5fr 1fr;
     white-space: nowrap;
@@ -277,6 +278,7 @@ body {
   body {
     min-width: 320px;
     margin: 0 auto;
+    height: 100vh;
   }
 
   .container {
@@ -290,7 +292,7 @@ body {
     grid-row: 2/3;
     max-width: 100vw;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 
   .bankButtonText {

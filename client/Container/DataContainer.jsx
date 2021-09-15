@@ -4,7 +4,6 @@ const { useState, useEffect } = require('react');
 const TransactionAnalytics = require('../Container/TransactionAnalytics');
 const TransactionContainer = require('../Container/TransactionContainer');
 const axios = require('axios');
-
 const { WindMillLoading } = require('react-loadingg');
 const DataContainer = () => {
   const [transactions, setTransactions] = useState(null);
