@@ -1,8 +1,5 @@
 /* eslint-disable max-len */
 require('dotenv/config.js');
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-const categoriesList = require('./categories.js');
-const axios = require('axios');
 
 const carbonScore = {};
 
