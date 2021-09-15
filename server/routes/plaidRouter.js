@@ -20,21 +20,5 @@ plaidRouter.get('/transactions', plaidControllers.getTransactions, carbonScore.s
   res.status(200).json(res.locals.carbonlist);
 });
 
-// plaidRouter.get('/carbon', carbonControllers.carbon, (req, res) => {
-//   console.log('hitting carbon router');
-//   res.status(200).json('finished carbon router');
-// });
-
-// plaidRouter.get('/codes', mccControllers.getCode, (req, res) => {
-//   console.log('hitting mcc router');
-//   res.status(200).json('finished mcc router');
-// });
-
-// plaidRouter.get('/score', carbonScore.score, (req, res) => {
-//   console.log('hitting score router');
-//   res.status(200).json('hit categories');
-// });
-
-
 
 module.exports = plaidRouter;
