@@ -6,7 +6,7 @@ const { Redirect } = require('react-router-dom');
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [failed, setFailed] = useState(false);
   const [registered, setRegistered] = useState(false);
   useEffect(() => {

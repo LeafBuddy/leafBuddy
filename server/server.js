@@ -68,6 +68,7 @@ app.get(
   passport.authenticate('google', {
     scope: [
       'profile',
+      'email',
       'https://www.googleapis.com/auth/calendar',
       'https://www.googleapis.com/auth/calendar.events',
     ],
