@@ -1,20 +1,12 @@
-const regeneratorRuntime = require('regenerator-runtime');
 const axios = require('axios');
 const React = require('react');
 const { useState, useEffect } = require('react');
-const { ReactDOM } = require('react');
-const {
-  Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} = require('react-router-dom');
+const { Redirect } = require('react-router-dom');
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [failed, setFailed] = useState(false);
   const [registered, setRegistered] = useState(false);
   useEffect(() => {
@@ -51,8 +43,6 @@ const Login = () => {
       .catch((err) => console.log(err));
   }
 
-  async function onGoogleClick() {}
-
   if (!isLoggedIn) {
     return (
       <div className='loginWrapper'>
@@ -88,12 +78,14 @@ const Login = () => {
               Create new account
             </button>
             <div> </div>
-            <button
-              className='btn-grad'
-              id='loginButton'
-              onClick={onGoogleClick}>
-              Login with Google
-            </button>
+            <form>
+              <button
+                formaction='/auth/google'
+                className='btn-grad'
+                id='loginButton'>
+                Login with Google
+              </button>
+            </form>
           </div>
         </div>
       </div>
