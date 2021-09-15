@@ -4,7 +4,6 @@ const { useState, useEffect } = require('react');
 const TransactionAnalytics = require('../Container/TransactionAnalytics');
 const TransactionContainer = require('../Container/TransactionContainer');
 const axios = require('axios');
-
 import { WindMillLoading } from 'react-loadingg';
 function DataContainer() {
   const [transactions, setTransactions] = useState(null);
@@ -35,7 +34,6 @@ function DataContainer() {
               <div className='mainContent'>
                 <TransactionAnalytics props={transactions} />
                 <TransactionContainer props={transactions} />
-                );
               </div>
             );
           case 'loading':

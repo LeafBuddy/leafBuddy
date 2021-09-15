@@ -29,7 +29,6 @@ function TransactionContainer(props) {
         };
         return <Transaction className='transaction' key={i} props={txnData} />;
       })}
-      <button>Load the next transactions</button>
     </div>
   );
 }

@@ -111,8 +111,6 @@ plaidControllers.getTransactions = async (req, res, next) => {
       start_date: fiveDaysAgo,
       end_date: today,
     });
-    // TODO: remove me
-    //console.log(response);
     const transactions = [];
     response.data.transactions.map((el, i) => {
       if (response.data.transactions[i].merchant_name !== 'Republic Dive') {
@@ -127,8 +125,6 @@ plaidControllers.getTransactions = async (req, res, next) => {
         });
       }
     });
-    // TODO: remove me
-    //console.log(transactions);
     res.locals.transactions = transactions;
     return next();
   } catch (err) {
