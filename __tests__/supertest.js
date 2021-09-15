@@ -3,21 +3,37 @@ const path = require('path');
 import 'regenerator-runtime/runtime';
 const request = require('supertest');
 const express = require('express');
-const app = express();
+const app = require('../server/server.js');
+  /* const PORT = 4000;
+  app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}`);
+  }); */
 const testJsonFile = path.join(__dirname, '...', 'server');
 
-const server = 'http://localhost:4000/plaid/linktoken';
+
+
+const server = 'http://localhost:4000/';
 
 describe('Get Routers integration', () => {
-  describe('/', () => {
-    describe('GET', () => {
+  describe('GET /plaid', () => {
       it('responds with 200 status and text/html content type', () =>
-        request(server)
+        request(app)
           .get('/')
           .expect('Content-Type', /text\/html/)
           .expect(200));
     });
-  });
+});
+
+/* describe('Get Routers integration', () => {
+  describe('/', () => {
+    describe('GET /main', () => {
+      it('responds with 200 status and text/html content type', () =>
+        request(app)
+          .get('/')
+          .expect('Content-Type', /text\/html/)
+          .expect(200));
+    });
+  }); */
   //   describe('/style/style.scss', () => {
   //     describe('GET', () => {
   //       it('css file should respond with text/css content type', () =>
@@ -44,4 +60,3 @@ describe('Get Routers integration', () => {
   //           .expect('Content-Type', /text\/html/));
   //     });
   //   });
-});
