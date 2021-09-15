@@ -1,10 +1,8 @@
 const React = require('react');
-const axios = require('axios');
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-const { useEffect, useState } = require('react');
-import TransactionAnalytics from '../Container/TransactionAnalytics';
-import TransactionContainer from '../Container/TransactionContainer';
+const regeneratorRuntime = require('regenerator-runtime');
+const { useState, useEffect } = require('react');
+const TransactionAnalytics = require('../Container/TransactionAnalytics');
+const TransactionContainer = require('../Container/TransactionContainer');
 
 import { WindMillLoading } from 'react-loadingg';
 export default function DataContainer() {
@@ -40,10 +38,12 @@ export default function DataContainer() {
         <div>
           <WindMillLoading color='white' speed='0.5' />
           <div>
-            <h1 clasName='loadingText'>Loading....</h1>
+            <h1 className='loadingText'>Loading....</h1>
           </div>
         </div>
       )}
     </div>
   );
 }
+
+module.exports = DataContainer;

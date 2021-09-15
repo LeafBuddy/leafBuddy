@@ -1,10 +1,10 @@
 const React = require('react');
 const { BrowserRouter, Switch, Route } = require('react-router-dom');
-import Login from './pages/Login';
-import Main from './pages/Main';
-import PlaidContainer from './Container/PlaidContainer.jsx';
+const Login = require('./pages/Login');
+const Main = require('./pages/Main');
+const PlaidContainer = require('./Container/PlaidContainer.jsx');
 
-export default function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -14,4 +14,6 @@ export default function App() {
       </Switch>
     </BrowserRouter>
   );
-}
+};
+
+module.exports = App;
