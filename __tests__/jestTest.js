@@ -1,4 +1,4 @@
-import {
+/* import {
   render,
   screen,
   cleanup,
@@ -13,14 +13,14 @@ import Login from '../client/pages/Login';
 import Main from '../client/pages/Main';
 import PlaidContainer from '../client/Container/PlaidContainer.jsx';
 import fetch from 'node-fetch';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom'; */
 
 // test jest working
-// it('Testing to see if Jest works', () => {
-//   expect(1).toBe(1);
-// });
+it('Testing to see if Jest works', () => {
+  expect(1).toBe(1);
+});
 
-describe('Home Page & buttons', () => {
+/* describe('Home Page & buttons', () => {
     beforeEach(() =>
       render(
         <Router>
@@ -28,4 +28,4 @@ describe('Home Page & buttons', () => {
           <App />{' '}
         </Router>
       )
-    );
+    ); */
