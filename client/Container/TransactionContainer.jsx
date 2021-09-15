@@ -3,7 +3,7 @@ const { useState, useEffect } = require('react');
 const Transaction = require('../Components/Transaction');
 const faker = require('faker');
 
-export default function TransactionContainer(props) {
+function TransactionContainer(props) {
   const [transactions] = useState(props.props[0]);
   function emojiMapper(category) {
     switch (category) {

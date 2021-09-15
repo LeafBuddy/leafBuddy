@@ -2,7 +2,6 @@ const React = require('react');
 const { useEffect, useState } = require('react');
 const YourCarbonFootprint = require('../Components/YourCarbonFootprint');
 const BarChart = require('../Components/BarChart');
-import { WaveLoading } from 'react-loadingg';
 
 const TransactionAnalytics = (props) => {
   const [transactions] = useState(props.props[0]);
