@@ -19,7 +19,7 @@ const PlaidClient = (props) => {
       body: JSON.stringify({ public_token }),
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => console.log(data));
   }, []);
 
   const config = {
