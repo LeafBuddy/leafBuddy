@@ -1,6 +1,6 @@
-import React, { setState } from 'react';
+const React = require('react');
 const { useState, useEffect } = require('react');
-import Transaction from '../Components/Transaction';
+const Transaction = require('../Components/Transaction');
 const faker = require('faker');
 
 export default function TransactionContainer(props) {
@@ -37,3 +37,5 @@ export default function TransactionContainer(props) {
     </div>
   );
 }
+
+module.exports = TransactionContainer;
