@@ -50,6 +50,7 @@ const Login = () => {
       <div className='loginWrapper'>
         <div className='loginModule'>
           <h1 className='loginLogo'>Leaf Buddy</h1>
+          <p>See your climate impact</p>
           <div id='logIn'>
             <input
               type='text'
@@ -95,6 +96,6 @@ const Login = () => {
   } else {
     return <Redirect to='/main' />;
   }
-}
+};
 
 module.exports = Login;

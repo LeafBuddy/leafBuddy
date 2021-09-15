@@ -1,5 +1,5 @@
 const React = require('react');
-const PlaidContainer = require('./PlaidContainer');
+const PlaidContainer = require('../Container/PlaidContainer');
 
 const NavBar = () => {
   return (
@@ -7,9 +7,11 @@ const NavBar = () => {
       <div className='logo'>
         <h1>LeafBuddy</h1>
       </div>
-      <PlaidContainer />
+      <div className='connectToBank'>
+        <PlaidContainer />
+      </div>
     </div>
   );
-}
+};
 
 module.exports = NavBar;

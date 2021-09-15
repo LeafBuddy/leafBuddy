@@ -39,12 +39,15 @@
     "passport-google-oauth20": "^2.0.0",
     "pg": "^8.7.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.3",
     "react-dom": "^17.0.2",
+    "react-loadingg": "^1.7.2",
     "react-plaid-link": "^3.2.1",
     "react-router-dom": "^5.3.0",
     "recharts": "^2.1.2",
     "sass-loader": "^12.1.0",
-    "style-loader": "^3.2.1"
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
@@ -58,7 +61,6 @@
     "babel-jest": "^27.2.0",
     "babel-loader": "^8.2.2",
     "eslint-plugin-react": "^7.25.1",
-    "jest": "^27.2.0",
     "plaid": "^9.0.0-beta.15",
     "react-test-renderer": "^17.0.2",
     "sass": "^1.39.2",

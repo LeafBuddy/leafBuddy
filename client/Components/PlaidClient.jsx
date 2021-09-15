@@ -15,9 +15,7 @@ const PlaidClient = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ public_token }),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    }).then((res) => res.json());
   }, []);
 
   const config = {
@@ -41,6 +39,6 @@ const PlaidClient = (props) => {
       </button>
     </div>
   );
-}
+};
 
 module.exports = PlaidClient;
