@@ -6,7 +6,6 @@ const carbonScore = {};
 carbonScore.score = (req, res, next) => {
   const transactionList = res.locals.transactions;
   const carbonList = [];
-  console.log(transactionList);
 
   transactionList.forEach((elem) => {
     const newObj = {};
