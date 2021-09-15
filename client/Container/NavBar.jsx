@@ -8,7 +8,9 @@ const NavBar = (props) => {
         <h1>LeafBuddy</h1>
       </div>
       <div className='connectToBank'>
-        <button className='btn-grad'>Connect your Bank</button>
+        <button className='btn-grad' id='connectToBankButton'>
+          🏦 <span className='bankButtonText'>Connect your Bank</span>
+        </button>
       </div>
     </div>
   );
