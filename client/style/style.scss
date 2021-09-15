@@ -257,22 +257,23 @@ body {
     text-align: center;
   }
 
-  .txnCarbon {
-    grid-column: 4/5;
-    align-self: center;
-    justify-self: center;
-  }
-
   .txnAmount {
-    grid-column: 5/6;
+    grid-column: 4/5;
+    grid-row: 1/2;
     align-self: center;
     justify-self: center;
     white-space: nowrap;
     text-align: center;
+    color: #b8a4e0;
+  }
+  .txnCarbon {
+    grid-column: 5/6;
+    align-self: center;
+    justify-self: center;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 500px) {
   body {
     min-width: 320px;
     margin: 0 auto;
