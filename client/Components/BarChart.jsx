@@ -1,9 +1,7 @@
 const React = require('react');
-const { PureComponent } = require('react');
 const {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,

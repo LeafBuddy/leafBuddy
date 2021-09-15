@@ -1,4 +1,3 @@
-const regeneratorRuntime = require('regenerator-runtime');
 const axios = require('axios');
 const React = require('react');
 const { useState, useEffect } = require('react');
