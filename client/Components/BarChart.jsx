@@ -63,7 +63,7 @@ const data = [
   },
 ];
 
-export default function Co2Chart() {
+const Co2Chart = () => {
   return (
     <ResponsiveContainer width='100%' height='100%'>
       <BarChart
@@ -87,3 +87,5 @@ export default function Co2Chart() {
     </ResponsiveContainer>
   );
 }
+
+module.exports = Co2Chart;

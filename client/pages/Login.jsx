@@ -11,7 +11,7 @@ const {
   Redirect,
 } = require('react-router-dom');
 
-function Login() {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);

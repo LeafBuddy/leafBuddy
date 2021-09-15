@@ -1,8 +1,8 @@
 const React = require('react');
-import TransactionAnalytics from '../Container/TransactionAnalytics';
-import TransactionContainer from '../Container/TransactionContainer';
+const TransactionAnalytics = require('../Container/TransactionAnalytics');
+const TransactionContainer = require('../Container/TransactionContainer');
 
-export default function DataContainer(props) {
+const DataContainer = (props) => {
   return (
     <div className='dataContainer'>
       <TransactionAnalytics />
@@ -10,3 +10,5 @@ export default function DataContainer(props) {
     </div>
   );
 }
+
+module.exports = DataContainer;

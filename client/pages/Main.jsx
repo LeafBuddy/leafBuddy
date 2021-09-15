@@ -1,10 +1,10 @@
 const regeneratorRuntime = require('regenerator-runtime');
 const React = require('react');
 const { useState, useEffect } = require('react');
-import NavBar from '../Container/NavBar';
-import DataContainer from '../Container/DataContainer';
+const NavBar = require('../Container/NavBar');
+const DataContainer = require('../Container/DataContainer');
 
-export default function Main(props) {
+const Main = (props) => {
   return (
     <div id='Main' className='container'>
       <NavBar />
@@ -13,4 +13,7 @@ export default function Main(props) {
       </div>
     </div>
   );
-}
+};
+
+
+module.exports = Main;
