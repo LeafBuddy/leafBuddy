@@ -5,35 +5,55 @@ const faker = require('faker');
 
 export default function TransactionContainer(props) {
   const [transactions] = useState(props.props[0]);
-  let transactionList;
   useEffect(() => {
-    if (transactions.length > 0) {
-      transactionList = transactionRenderer();
-    }
+    console.log(
+      transactions.map((el) => {
+        el;
+      })
+    );
   }, []);
-  const transactionRenderer = () => {
-    const results = transactions.map((el, i) => {
-      const txnData = {
-        icon: `🛒`,
-        date: el.date,
-        merchant: el.merchantName,
-        amount: `${el.amount}`,
-        carbonAmount: `${faker.finance.amount()}kg`,
-      };
-      return <Transaction className='transaction' key={i} props={txnData} />;
-    });
-    return results;
-  };
+
+  function emojiMapper(category) {
+    if (
+      category[0] === 'Shops' ||
+      category[0] === 'Service' ||
+      category[0] === 'Travel'
+    ) {
+      category = category[1];
+    } else {
+      category = category[0];
+    }
+    switch (category) {
+      case 'Pharmacies':
+        return `💊`;
+      case 'Taxi':
+        return `🚕`;
+      case 'Food and Drink':
+        return `🍕`;
+      case 'Transfer':
+        return `💸`;
+      case 'Insurance':
+        return `💰`;
+      case 'Automotive':
+        return `🚗`;
+      default:
+        return `🛒`;
+    }
+  }
 
   return (
     <div>
-      <div>
-        {() => {
-          if (transactions) {
-            return transactionRenderer();
-          }
-        }}
-      </div>
+      {transactions.map((el, i) => {
+        const txnData = {
+          icon: emojiMapper(el.category),
+          date: el.transactionDate,
+          merchant: el.merchantName ? el.merchantName : el.name,
+          amount: `$${el.amount}`,
+          carbonAmount: `${faker.finance.amount()}kg`,
+        };
+        return <Transaction className='transaction' key={i} props={txnData} />;
+      })}
+      <button>Load the next transactions</button>
     </div>
   );
 }
