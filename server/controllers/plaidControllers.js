@@ -74,12 +74,8 @@ plaidControllers.publicToken = async (req, res, next) => {
     });
      res.cookie('leaf', id );
 
-     const user = await User.findOneandUpdate(
-      {username: id},
-      {thetoken:res.locals.},
-      {upsert:true},
-      {new: true},
-    ); 
+    await User.findOneAndUpdate({username: id}, {thetoken:res.locals.}, {upsert:true}); 
+
     return next();
   } catch (error) {
     console.log(error);
@@ -131,15 +127,15 @@ plaidControllers.getTransactions = async (req, res, next) => {
   // get user ID from cookie
   const username = req.cookies.leaf;
   const user = await User.find({username:username});
-  console.log(username);
+  const  = user[0].thetoken;
 
   try{
     const response = await plaidClient.transactionsGet({
-      : process.env.PLAID_ACCESS_TOKEN,
+      : ,
       start_date: thirtyDays,
       end_date: today,
     });
-    
+
     res.locals.transactions = response.data.transactions;
     return next();
   } catch (err) {

@@ -8,7 +8,7 @@ plaidRouter.get('/linkToken', plaidControllers.createLinkToken, (req, res) => {
   res.status(200).json(res.locals.linkToken);
 });
 
-plaidRouter.post('/publicToken', plaidControllers.publicToken, plaidControllers.setCookie, (req, res) => {
+plaidRouter.post('/publicToken', plaidControllers.publicToken, (req, res) => {
   console.log('hitting public router');
   res.status(200).json(res.locals.);
 });
