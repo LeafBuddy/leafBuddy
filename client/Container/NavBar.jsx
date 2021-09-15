@@ -1,5 +1,5 @@
 const React = require('react');
-const PlaidContainer = require('../Container/PlaidContainer');
+const PlaidContainer = require('./PlaidContainer');
 
 const NavBar = () => {
   return (

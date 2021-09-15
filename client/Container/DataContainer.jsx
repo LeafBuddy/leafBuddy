@@ -1,6 +1,6 @@
 const React = require('react');
-const TransactionAnalytics = require('../Container/TransactionAnalytics');
-const TransactionContainer = require('../Container/TransactionContainer');
+const TransactionAnalytics = require('./TransactionAnalytics');
+const TransactionContainer = require('./TransactionContainer');
 
 const DataContainer = () => {
   return (

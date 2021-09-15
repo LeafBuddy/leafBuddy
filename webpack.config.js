@@ -52,14 +52,14 @@ module.exports = {
   },
   plugins: [
     new Dotenv({
-      path: `./.${process.env.NODE_ENV}.env`,
+      path: './.env',
     }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
     }),
   ],
   devServer: {
-    contentBase: './client',
+    static: './client',
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',

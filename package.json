@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "nodemon server/server.js",
-    "start:client": "NODE_ENV=development webpack serve --open & nodemon server/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development webpack serve --open & nodemon server/index.js",
+    "dev:webpack": "NODE_ENV=development webpack serve --open",
+    "dev:express": "NODE_ENV=development PORT=4000 nodemon server/index.js",
+    "prod:webpack": "NODE_ENV=production webpack",
+    "prod:express": "NODE_ENV=production PORT=4000 node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -42,7 +45,6 @@
     "recharts": "^2.1.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
-    "webpack": "^5.52.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",

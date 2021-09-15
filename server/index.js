@@ -1,9 +1,8 @@
 const path = require('path');
-const dotenv = require('dotenv');
 const cors = require('cors');
 const express = require('express');
 const app = express();
-dotenv.config({ path: path.resolve(__dirname, './config/config.env') });
+require('dotenv/config.js');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -30,7 +29,7 @@ passport.use(
       // User.findOrCreate({ googleId: profile.id }, function (err, user) {
       //   return cb(err, user);
       // });
-      console.log('access toke', accessToken);
+      console.log('access token', accessToken);
       console.log('refresh token', refreshToken);
       console.log('profile', profile);
 
@@ -60,7 +59,6 @@ passport.deserializeUser(function (user, cb) {
   cb(null, user);
   // });
 });
-console.log('made it just before redirect');
 
 //passport routes
 app.get(
