@@ -65,9 +65,9 @@ module.exports = {
       'Access-Control-Allow-Origin': '*',
     },
     proxy: {
-      '/plaid': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
-      '/auth/**': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
-      '/bank': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
+      '/plaid': {target: 'http://localhost:4000/'},
+      '/auth/**': {target: 'http://localhost:4000/'},
+      '/bank': {target: 'http://localhost:4000/'},
     },
   },
   resolve: {
