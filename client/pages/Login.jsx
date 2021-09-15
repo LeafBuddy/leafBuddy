@@ -2,7 +2,7 @@ const axios = require('axios');
 const React = require('react');
 const { useState, useEffect } = require('react');
 const { Redirect } = require('react-router-dom');
-const regeneratorRuntime = require("regenerator-runtime");
+const regeneratorRuntime = require('regenerator-runtime');
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -50,6 +50,7 @@ const Login = () => {
       <div className='loginWrapper'>
         <div className='loginModule'>
           <h1 className='loginLogo'>Leaf Buddy</h1>
+          <p>See your climate impact</p>
           <div id='logIn'>
             <input
               type='text'
@@ -95,6 +96,6 @@ const Login = () => {
   } else {
     return <Redirect to='/main' />;
   }
-}
+};
 
 module.exports = Login;
