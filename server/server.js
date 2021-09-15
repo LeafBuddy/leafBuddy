@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const express = require('express');
 const app = express();
-dotenv.config({path: path.resolve(__dirname, './config/config.env' )});
+dotenv.config({ path: path.resolve(__dirname, './config/config.env') });
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
- 
+
 //passport strategy
 passport.use(
   new GoogleStrategy(
@@ -101,6 +101,7 @@ app.get('/style/style.scss', (_req, res) => {
   res.set('Content-Type', 'text/css');
   res.sendFile(path.resolve(__dirname, '..', 'assets', 'css', 'style.scss'));
 });
+
 //serve js files
 app.get('/js/:file', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'assets', 'js', 'index.js'));
