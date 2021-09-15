@@ -1,7 +1,7 @@
-import React from 'react';
-import PlaidContainer from '../Container/PlaidContainer';
+const React = require('react');
+const PlaidContainer = require('../Container/PlaidContainer');
 
-export default function NavBar() {
+const NavBar = () => {
   return (
     <div className='navBar'>
       <div className='logo'>
@@ -11,3 +11,5 @@ export default function NavBar() {
     </div>
   );
 }
+
+module.exports = NavBar;

@@ -1,8 +1,9 @@
 const React = require('react');
-import NavBar from '../Container/NavBar';
-import DataContainer from '../Container/DataContainer';
+const { useState, useEffect } = require('react');
+const NavBar = require('../Container/NavBar');
+const DataContainer = require('../Container/DataContainer');
 
-export default function Main() {
+const Main = () => {
   return (
     <div id='Main' className='container'>
       <NavBar />
@@ -11,4 +12,7 @@ export default function Main() {
       </div>
     </div>
   );
-}
+};
+
+
+module.exports = Main;
