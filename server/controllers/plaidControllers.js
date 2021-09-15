@@ -73,7 +73,7 @@ plaidControllers.getTransactions = async (req, res, next) => {
   const today = now.format('YYYY-MM-DD');
   const fiveDaysAgo = now.subtract(5, 'days').format('YYYY-MM-DD');
 
-  const  = 'access-development-bfb5c15e-985c-4eeb-b744-02932bfe8356';
+  const  = process.env.PLAID_ACCESS_TOKEN;
   console.log();
 
   try {
