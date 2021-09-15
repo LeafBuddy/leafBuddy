@@ -6,7 +6,7 @@ const TransactionContainer = require('../Container/TransactionContainer');
 const axios = require('axios');
 
 import { WindMillLoading } from 'react-loadingg';
-export default function DataContainer() {
+function DataContainer() {
   const [transactions, setTransactions] = useState(null);
   const [connectedToPlaid, setPlaidConnection] = useState(null);
 

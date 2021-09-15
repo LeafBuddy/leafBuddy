@@ -1,5 +1,5 @@
 const React = require('react');
-import TransactionContainer from '../Container/TransactionContainer';
+const TransactionContainer = require('../Container/TransactionContainer');
 const { useEffect } = require('react');
 const {
   BarChart,
@@ -41,8 +41,8 @@ const Co2Chart = (props) => {
         data={data}
         margin={{
           top: 5,
-          right: 30,
-          left: 20,
+          right: 20,
+          left: 0,
           bottom: 5,
         }}>
         <CartesianGrid strokeDasharray='3 3' />
