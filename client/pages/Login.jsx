@@ -6,7 +6,7 @@ const { Redirect } = require('react-router-dom');
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [failed, setFailed] = useState(false);
   const [registered, setRegistered] = useState(false);
   useEffect(() => {
@@ -42,7 +42,6 @@ function Login() {
       })
       .catch((err) => console.log(err));
   }
-
 
   if (!isLoggedIn) {
     return (
@@ -80,7 +79,7 @@ function Login() {
             </button>
             <div> </div>
             <form>
-              <button 
+              <button
                 formaction='/auth/google'
                 className='btn-grad'
                 id='loginButton'>

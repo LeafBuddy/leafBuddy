@@ -2,7 +2,7 @@ const React = require('react');
 import YourCarbonFootprint from '../Components/YourCarbonFootprint';
 import BarChart from '../Components/BarChart';
 
-export default function TransactionAnalytics(props) {
+export default function TransactionAnalytics() {
   return (
     <div className='transactionAnalytics'>
       <div className='transactionAnalyticsHeader'>
