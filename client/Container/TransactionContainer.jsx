@@ -15,7 +15,7 @@ export default function TransactionContainer(props) {
         .reverse()
         .join(' ');
       const el = {
-        icon: `🛒`,
+        icon: '🛒',
         date: txnDate,
         merchant: faker.company.companyName(),
         amount: `$ ${faker.finance.amount()}`,
