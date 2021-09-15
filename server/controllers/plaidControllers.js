@@ -3,7 +3,7 @@ require('dotenv/config.js');
 const moment = require('moment');
 const pool = require('../db/connect.js');
 const User = require('../db/model.js');
-const cryptoRandomString = require('cryptoRandomString');
+const randomstring = require("randomstring");
 
 const configuration = new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV],
@@ -54,16 +54,8 @@ plaidControllers.createLinkToken = async (req, res, next) => {
 
 plaidControllers.setCookie = (req, res, next) => {
 
-   const id = cryptoRandomString({length: 10});
-   res.cookie('leaf', id );
-   return next();
-    //  const user = await User.findOneandUpdate(
-    //     {username: email},
-    //     {thetoken:res.locals.},
-    //     {upsert:true},
-    //     {new: true},
-    // ); 
 
+   return next();
 };
 
 plaidControllers.publicToken = async (req, res, next) => {
@@ -75,14 +67,25 @@ plaidControllers.publicToken = async (req, res, next) => {
     });
     res.locals. = response.data.;
      
+    // create user ID and save in cookies and DB
+    const id = randomstring.generate({
+      length: 12,
+      charset: 'alphabetic'
+    });
+     res.cookie('leaf', id );
 
+     const user = await User.findOneandUpdate(
+      {username: id},
+      {thetoken:res.locals.},
+      {upsert:true},
+      {new: true},
+    ); 
     return next();
   } catch (error) {
     console.log(error);
     return next(error);
   }
 };
-
 
 
 plaidControllers.getTransactions = async (req, res, next) => {
@@ -93,11 +96,11 @@ plaidControllers.getTransactions = async (req, res, next) => {
   const today = now.format('YYYY-MM-DD');
   const fiveDaysAgo = now.subtract(5, 'days').format('YYYY-MM-DD');
 
-  const email = 'testing123';
-  const user = await User.find({email:email});
-  console.log(user[0].thetoken);
+  // get user ID from cookie
+  const username = req.cookies.leaf;
 
-
+  const user = await User.find({username:username});
+  console.log(username);
   const  = process.env.PLAID_ACCESS_TOKEN;
   console.log();
 
