@@ -29,8 +29,8 @@ mccControllers.getCode = (req, res, next) => {
   
   
   const requestData = {
-    'merchant_id': 'Unitedhealthone',
-    'type': 'ExactMatch'
+    'merchant_id': 'uber',
+    'type': 'FuzzyMatch'
   };
   merchantIdentifier.MerchantIds.query(requestData
     , function (error, data) {
