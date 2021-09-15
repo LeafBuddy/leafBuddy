@@ -1,6 +1,8 @@
 const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
 require('dotenv/config.js');
 const moment = require('moment');
+
+
 const configuration = new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV],
   baseOptions: {
