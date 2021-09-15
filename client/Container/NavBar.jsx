@@ -1,16 +1,13 @@
-const React = require('react');
-const { render } = require('react-dom');
+import React from 'react';
+import PlaidContainer from '../Container/PlaidContainer';
 
-const NavBar = (props) => {
+export default function NavBar() {
   return (
     <div className='navBar'>
       <div className='logo'>
         <h1>LeafBuddy</h1>
       </div>
-      <div className='connectToBank'>
-        <button className='btn-grad'>Connect your Bank</button>
-      </div>
+      <PlaidContainer />
     </div>
   );
-};
-module.exports = NavBar;
+}

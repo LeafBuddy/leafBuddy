@@ -6,7 +6,7 @@ const TransactionAnalytics = (props) => {
   return (
     <div className='transactionAnalytics'>
       <div className='transactionAnalyticsHeader'>
-        <h3>Transaction Analytics</h3>
+        <h3>Hey Konstantin 👋</h3>
       </div>
       <div className='charts'>
         <div className='leftChart'>

@@ -3,7 +3,7 @@ const { useState } = require('react');
 const Transaction = require('../Components/Transaction');
 const faker = require('faker');
 
-const TransactionContainer = (props) => {
+const TransactionContainer = () => {
   const [transactions, setTransactions] = useState([]);
 
   const transactionRenderer = () => {
@@ -19,7 +19,7 @@ const TransactionContainer = (props) => {
         date: txnDate,
         merchant: faker.company.companyName(),
         amount: `$ ${faker.finance.amount()}`,
-        carbonAmount: faker.finance.amount(),
+        carbonAmount: `${faker.finance.amount()}kg`,
       };
       // TODO: Update with map statement to pass props down to transaction components
       transactionList.push(

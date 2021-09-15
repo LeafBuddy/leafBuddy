@@ -1,6 +1,6 @@
 const React = require('react');
 const { useState, useEffect } = require('react');
-const PlaidClient = require('../Components/PlaidClient.jsx');
+import PlaidClient from '../Components/PlaidClient.jsx';
 
 const PlaidContainer = () => {
   const [linkToken, setLinkToken] = useState(null);
