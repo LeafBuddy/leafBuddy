@@ -1,4 +1,4 @@
-import React from 'react';
+const React = require('react');
 const { useCallback } = require('react');
 const {
   usePlaidLink,
@@ -6,7 +6,7 @@ const {
   PlaidLinkOnSuccess,
 } = require('react-plaid-link');
 
-export default function PlaidClient(props) {
+const PlaidClient = (props) => {
   const onSuccess = useCallback((public_token, metadata) => {
     // send public_token to server
     const response = fetch('/plaid/publicToken', {
@@ -42,3 +42,5 @@ export default function PlaidClient(props) {
     </div>
   );
 }
+
+module.exports = PlaidClient;
