@@ -103,9 +103,7 @@ plaidControllers.getTransactions = async (req, res, next) => {
   const now = moment();
   const today = now.format('YYYY-MM-DD');
   const fiveDaysAgo = now.subtract(15, 'days').format('YYYY-MM-DD');
-
   const  = process.env.PLAID_ACCESS_TOKEN;
-  console.log();
 
   try {
     const response = await plaidClient.transactionsGet({
@@ -123,6 +121,8 @@ plaidControllers.getTransactions = async (req, res, next) => {
         category: response.data.transactions[i].category,
         categoryId: response.data.transactions[i].category_id,
         merchantName: response.data.transactions[i].merchant_name,
+        name: response.data.transactions[i].name,
+        carbonAmount: 1,
       });
     });
     // TODO: remove me
@@ -130,7 +130,14 @@ plaidControllers.getTransactions = async (req, res, next) => {
     res.locals.transactions = transactions;
     return next();
   } catch (err) {
-    console.log(err);
+    const error = err.data;
+    console.log(
+      'bug',
+      error,
+      error.error_type,
+      error.error_code,
+      error.error_message
+    );
     return next(err);
   }
 };
