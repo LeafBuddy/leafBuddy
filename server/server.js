@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const express = require('express');
 const app = express();
-dotenv.config({path: path.resolve(__dirname, './config/config.env' )});
+dotenv.config({ path: path.resolve(__dirname, './config/config.env') });
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 console.log(`http://localhost:${process.env.PORT}/auth/google/callback`);
- 
+
 //passport strategy
 passport.use(
   new GoogleStrategy(
@@ -68,6 +68,7 @@ app.get(
   passport.authenticate('google', {
     scope: [
       'profile',
+      'email',
       'https://www.googleapis.com/auth/calendar',
       'https://www.googleapis.com/auth/calendar.events',
     ],
@@ -75,6 +76,7 @@ app.get(
     prompt: 'consent',
   })
 );
+// eslint-disable-next-line max-len
 //^^ provides read write access to user calendars and events within calendar, see https://developers.google.com/calendar/api/guides/auth
 app.get(
   '/auth/google/callback',
@@ -127,3 +129,5 @@ const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
+
+module.exports = app;
