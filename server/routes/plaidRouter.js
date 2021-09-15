@@ -8,7 +8,7 @@ plaidRouter.get('/linkToken', plaidControllers.createLinkToken, (req, res) => {
   res.status(200).json(res.locals.linkToken);
 });
 
-plaidRouter.post('/publicToken', plaidControllers.publicToken, (req, res) => {
+plaidRouter.post('/publicToken', plaidControllers.publicToken, plaidControllers.setCookie, (req, res) => {
   console.log('hitting public router');
   res.status(200).json(res.locals.);
 });
@@ -17,5 +17,6 @@ plaidRouter.get('/transactions', plaidControllers.getTransactions, carbonScore.s
   console.log('hitting transactions router');
   res.status(200).json(res.locals.carbonlist);
 });
+
 
 module.exports = plaidRouter;

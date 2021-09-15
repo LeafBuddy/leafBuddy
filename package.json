@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest ",
     "start": "nodemon server/server.js",
     "start:client": "NODE_ENV=development webpack serve --open & nodemon server/server.js"
   },
@@ -21,8 +21,10 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "crypto-random-string": "^4.0.0",
     "css-loader": "^6.2.0",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
@@ -31,6 +33,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "moment": "^2.29.1",
+    "mongoose": "^6.0.6",
     "nodemon": "^2.0.12",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
