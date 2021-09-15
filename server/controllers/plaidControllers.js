@@ -102,7 +102,7 @@ plaidControllers.publicToken = async (req, res, next) => {
 plaidControllers.getTransactions = async (req, res, next) => {
   const now = moment();
   const today = now.format('YYYY-MM-DD');
-  const fiveDaysAgo = now.subtract(15, 'days').format('YYYY-MM-DD');
+  const fiveDaysAgo = now.subtract(30, 'days').format('YYYY-MM-DD');
   const  = process.env.PLAID_ACCESS_TOKEN;
 
   try {
@@ -115,15 +115,17 @@ plaidControllers.getTransactions = async (req, res, next) => {
     //console.log(response);
     const transactions = [];
     response.data.transactions.map((el, i) => {
-      transactions.push({
-        transactionDate: response.data.transactions[i].date,
-        amount: response.data.transactions[i].amount,
-        category: response.data.transactions[i].category,
-        categoryId: response.data.transactions[i].category_id,
-        merchantName: response.data.transactions[i].merchant_name,
-        name: response.data.transactions[i].name,
-        carbonAmount: 1,
-      });
+      if (response.data.transactions[i].merchant_name !== 'Republic Dive') {
+        transactions.push({
+          transactionDate: response.data.transactions[i].date,
+          amount: response.data.transactions[i].amount,
+          category: response.data.transactions[i].category,
+          categoryId: response.data.transactions[i].category_id,
+          merchantName: response.data.transactions[i].merchant_name,
+          name: response.data.transactions[i].name,
+          carbonAmount: 1,
+        });
+      }
     });
     // TODO: remove me
     //console.log(transactions);
