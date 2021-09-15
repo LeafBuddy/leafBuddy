@@ -87,33 +87,62 @@ plaidControllers.publicToken = async (req, res, next) => {
   }
 };
 
+// {
+// account_id: 'Yg1yYmpN0XfzkLQpVmx6Up3L4d9XovHedjXVL',
+// account_owner: null,
+// amount: 16.35,
+// authorized_date: null,
+// authorized_datetime: null,
+// category: [ 'Travel', 'Taxi' ],
+// category_id: '22016000',
+// check_number: null,
+// date: '2021-09-10',
+// datetime: null,
+// iso_currency_code: 'USD',
+// location: {
+//   address: null,
+//   city: null,
+//   country: null,
+//   lat: null,
+//   lon: null,
+//   postal_code: null,
+//   region: 'CA',
+//   store_number: null
+// },
+// merchant_name: 'Uber',
+// name: 'Uber',
+// payment_channel: 'in store',
+// payment_meta: {
+//   by_order_of: null,
+//   payee: null,
+//   payer: null,
+//   payment_method: null,
+//   payment_processor: null,
+//   ppd_id: null,
+//   reason: null,
+//   reference_number: null
+// }
 
 plaidControllers.getTransactions = async (req, res, next) => {
-  // Notes for Michael:
-  // - Connect your Bank: should be linked to Plaid Client/Plaid Container
-  // - You can get transaction data from the Localhost:8080/plaid/transactions
   const now = moment();
   const today = now.format('YYYY-MM-DD');
-  const fiveDaysAgo = now.subtract(5, 'days').format('YYYY-MM-DD');
+  const thirtyDays = now.subtract(30, 'days').format('YYYY-MM-DD');
 
   // get user ID from cookie
   const username = req.cookies.leaf;
-
   const user = await User.find({username:username});
   console.log(username);
-  const  = process.env.PLAID_ACCESS_TOKEN;
-  console.log();
 
-  try {
+  try{
     const response = await plaidClient.transactionsGet({
-      ,
-      start_date: fiveDaysAgo,
+      : process.env.PLAID_ACCESS_TOKEN,
+      start_date: thirtyDays,
       end_date: today,
     });
+    
     res.locals.transactions = response.data.transactions;
     return next();
   } catch (err) {
-    console.log(err);
     return next(err);
   }
 };

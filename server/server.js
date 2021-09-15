@@ -103,6 +103,7 @@ app.get('/style/style.scss', (_req, res) => {
   res.set('Content-Type', 'text/css');
   res.sendFile(path.resolve(__dirname, '..', 'assets', 'css', 'style.scss'));
 });
+
 //serve js files
 app.get('/js/:file', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'assets', 'js', 'index.js'));

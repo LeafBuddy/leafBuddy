@@ -7,12 +7,9 @@ const Main = () => {
   return (
     <div id='Main' className='container'>
       <NavBar />
-      <div className='mainContainer'>
-        <DataContainer />
-      </div>
+      <DataContainer />
     </div>
   );
 };
-
 
 module.exports = Main;
