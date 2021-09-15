@@ -1,9 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: {
     index: './client/index.js',
+    bundle: './client/App.jsx',
     styles: './client/style/style.scss',
   },
   devtool: 'eval-source-map',
@@ -49,21 +51,26 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv({
+      path: `./.${process.env.NODE_ENV}.env`,
+    }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
     }),
   ],
   devServer: {
-    static: './client',
+    contentBase: './client',
     historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     proxy: {
       '/plaid': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
       '/auth/**': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
       '/bank': {target: 'http://localhost:4000/', secure: false, "changeOrigin": true},
-    }
+    },
   },
   resolve: {
-    // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
   },
 };
