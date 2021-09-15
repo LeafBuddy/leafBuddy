@@ -15,7 +15,13 @@ const PlaidContainer = () => {
   }, []);
 
   if (!linkToken) {
-    return <>Still loading...</>;
+    return (
+      <div className='connectToBank'>
+        <button className='btn-grad' id='connectToBankButton'>
+          🏦 <span className='bankButtonText'>Connect your Bank</span>
+        </button>
+      </div>
+    );
   }
 
   return (
