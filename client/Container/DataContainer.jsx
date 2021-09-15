@@ -2,7 +2,7 @@ const React = require('react');
 const TransactionAnalytics = require('../Container/TransactionAnalytics');
 const TransactionContainer = require('../Container/TransactionContainer');
 
-const DataContainer = (props) => {
+const DataContainer = () => {
   return (
     <div className='dataContainer'>
       <TransactionAnalytics />
