@@ -1,18 +1,17 @@
 const React = require('react');
 const { useState, useEffect } = require('react');
 const Transaction = require('../Components/Transaction');
-const faker = require('faker');
 
 function TransactionContainer(props) {
   const [transactions] = useState(props.props[0]);
   function emojiMapper(category) {
     switch (category) {
-      case 'Taxi':
-        return `🚕`;
-      case 'Restaurants':
-        return `🍕`;
-      default:
-        return `🛒`;
+    case 'Taxi':
+      return '🚕';
+    case 'Restaurants':
+      return '🍕';
+    default:
+      return '🛒';
     }
   }
 

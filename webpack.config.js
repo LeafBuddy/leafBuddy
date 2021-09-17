@@ -23,13 +23,13 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-react', '@babel/preset-env'],
-          plugins: ["@babel/plugin-transform-modules-commonjs"],
+          plugins: ['@babel/plugin-transform-modules-commonjs'],
         },
       },
       {
         test: /\.m?js/,
         resolve: {
-            fullySpecified: false
+          fullySpecified: false
         }
       },
       {

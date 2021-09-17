@@ -1,5 +1,5 @@
 ## Build layer
-FROM node:16.0.0 AS builder 
+FROM node:16.0.0 AS builder
 WORKDIR /app
 COPY . .
 RUN npm install
