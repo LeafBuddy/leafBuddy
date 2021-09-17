@@ -1,6 +1,3 @@
-/* eslint-disable max-len */
-require('dotenv/config.js');
-
 const carbonScore = {};
 
 carbonScore.score = (req, res, next) => {

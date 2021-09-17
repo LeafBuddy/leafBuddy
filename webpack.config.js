@@ -52,7 +52,7 @@ module.exports = {
   },
   plugins: [
     new Dotenv({
-      path: './.env',
+      path: path.resolve(__dirname,'./.env'),
     }),
     new HtmlWebpackPlugin({
       template: './client/index.html',

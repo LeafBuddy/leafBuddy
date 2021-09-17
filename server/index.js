@@ -2,7 +2,7 @@ const path = require('path');
 const cors = require('cors');
 const express = require('express');
 const app = express();
-require('dotenv/config.js');
+require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
