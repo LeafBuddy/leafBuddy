@@ -35,6 +35,12 @@
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "pg": "^8.7.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.6.3",
+    "react-dom": "^16.8.6",
+    "react-loadingg": "^1.7.2",
+    "react-plaid-link": "^3.2.1",
+    "react-router-dom": "^5.3.0",
     "recharts": "^2.1.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1"
