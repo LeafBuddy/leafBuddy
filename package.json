@@ -9,7 +9,7 @@
     "dev:webpack": "NODE_ENV=development webpack serve --open",
     "dev:express": "NODE_ENV=development PORT=4000 nodemon server/index.js",
     "prod:webpack": "NODE_ENV=production webpack",
-    "prod:express": "NODE_ENV=production PORT=4000 node server/index.js"
+    "prod:express": "NODE_ENV=production PORT=4000 node ./server/index.js"
   },
   "repository": {
     "type": "git",
