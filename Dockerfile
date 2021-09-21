@@ -13,9 +13,8 @@ COPY --from=builder /app/build ./build/
 COPY --from=builder /app/server ./server/
 COPY --from=builder /app/server ./server/
 COPY --from=builder /app/haproxy.cfg ./
-RUN apk add --update nodejs npm haproxy acme-client openssl openssh
-RUN rc-update add sshd
-RUN /etc/init.d/sshd start
+RUN apk add --update bash nodejs npm haproxy curl openssl openssh
+RUN curl https://get.acme.sh | sh -s email=admin@leafbuddy.io
 RUN npm install
 RUN addgroup -S app && adduser -S prod -G app
 USER prod
